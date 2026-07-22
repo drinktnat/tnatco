@@ -335,7 +335,7 @@ export default function Home() {
         </div>
         <div className="faq-list">
           {faqs.map(([question, answer], index) => (
-            <details key={question} open={index === 0}>
+            <details key={question}>
               <summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i>+</i></summary>
               <p>{answer}</p>
             </details>

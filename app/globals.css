@@ -22,10 +22,9 @@ img { display: block; max-width: 100%; }
 .topline { min-height: 34px; padding: 7px 4vw; display: flex; align-items: center; justify-content: space-between; gap: 20px; background: var(--black); color: white; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; }
 .topline strong { color: var(--blue-soft); font-weight: 800; }
 
-.site-header { height: 84px; padding: 0 4vw; display: grid; grid-template-columns: minmax(250px, 1fr) auto minmax(250px, 1fr); align-items: center; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.95); position: sticky; top: 0; z-index: 30; backdrop-filter: blur(16px); }
+.site-header { height: 84px; padding: 0 4vw; display: grid; grid-template-columns: minmax(250px, 1fr) auto minmax(250px, 1fr); align-items: center; border-bottom: 1px solid var(--line); background: #ffffff; position: sticky; top: 0; z-index: 30; }
 .brand { width: 250px; height: 76px; overflow: hidden; display: flex; align-items: center; }
 .brand img { width: 250px; max-width: none; transform: none; }
-.site-header .brand img { mix-blend-mode: multiply; }
 nav { display: flex; align-items: center; gap: 34px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .11em; }
 nav a { padding: 12px 0 10px; border-bottom: 1px solid transparent; }
 nav a:hover { border-color: var(--black); }
