@@ -94,7 +94,7 @@ export default function Home() {
   return (
     <main id="top">
       <div className="topline">
-        <span>Stuart, Florida</span>
+        <span>South Florida</span>
         <strong>Look professional. Get found. Stay busy.</strong>
         <span>Built for local businesses</span>
       </div>
@@ -108,6 +108,7 @@ export default function Home() {
           <a href="#packages">Packages</a>
           <a href="#process">Process</a>
           <a href="#faq">Questions</a>
+          <a href="/about">About</a>
         </nav>
         <a className="header-cta" href={inquiryHref}>Request a demo</a>
       </header>
@@ -366,7 +367,7 @@ export default function Home() {
           <a href="#process">Process</a>
           <a href="mailto:contact@tnatco.com">Contact</a>
         </div>
-        <span>© 2026 TNAT Co. LLC · Stuart, Florida</span>
+        <span>© 2026 TNAT Co. LLC · South Florida</span>
       </footer>
     </main>
   );
