@@ -169,7 +169,7 @@ export default function Home() {
           <p className="section-tag">What we handle</p>
           <div>
             <h2>Your online presence,<br />under one roof.</h2>
-            <p>You should not need five different vendors—or a technology degree—to look professional and respond to customers online.</p>
+            <p>One reliable partner handles your website, local visibility, content and customer inquiries—so everything stays clear and easy to manage.</p>
           </div>
         </div>
         <div className="service-grid">
@@ -298,7 +298,7 @@ export default function Home() {
           <div className="section-heading">
             <p className="section-tag light">The TNAT method</p>
             <div>
-              <h2 className="process-title">From first conversation<br /><span>to live website—</span><br /><em>without the usual mess.</em></h2>
+              <h2 className="process-title">From first conversation<br /><span>to live website.</span><br /><em>Without the usual mess.</em></h2>
               <p>Four clear milestones. One accountable partner. You always know what is happening and what we need from you.</p>
             </div>
           </div>
