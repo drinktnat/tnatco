@@ -82,7 +82,7 @@ const steps = [
 const faqs = [
   ["Do I own my website and domain?", "Yes. Your domain and business accounts stay in your name. TNAT Co. receives only the access needed to build and manage the work."],
   ["Can you connect online booking?", "Yes. We can connect trusted booking platforms, quote forms and restaurant reservation services instead of rebuilding sensitive systems from scratch."],
-  ["What if I already have photos?", "We can optimize strong existing photos for the Basic and Professional plans. Original professional photography is included only with Premium."],
+  ["What if I already have photos?", "We can optimize strong existing photos for any plan. If you need fresh content later, the professional photo refresh is available as an optional add-on."],
   ["Can you update specials, photos or reviews?", "Yes. Professional and Premium include monthly edit time. Larger campaigns and frequent promotional emails can be added later."],
   ["Do you only work with marine businesses?", "No. TNAT Co. is built for local service businesses—from marine shops and mechanics to contractors, restaurants, salons and more."],
 ];
@@ -95,8 +95,8 @@ export default function Home() {
     <main id="top">
       <div className="topline">
         <span>Stuart, Florida</span>
-        <strong>Websites. Photos. Leads.</strong>
-        <span>Built for local business</span>
+        <strong>Stand out. Show up. Get chosen.</strong>
+        <span>Built for local businesses</span>
       </div>
 
       <header className="site-header">
@@ -186,9 +186,18 @@ export default function Home() {
                 )}
                 {service.number === "02" && (
                   <div className="graphic-local">
-                    <span className="local-ring"><i /></span>
-                    <b>FOUND NEARBY</b>
-                    <em>LOCAL SEARCH · 3.2 MI</em>
+                    <div className="local-search-bar"><i>⌕</i><span>service near me</span><b>↗</b></div>
+                    <div className="local-map">
+                      <span className="map-road road-one" />
+                      <span className="map-road road-two" />
+                      <span className="map-road road-three" />
+                      <i className="map-pin"><b /></i>
+                      <em>3.2 MI</em>
+                    </div>
+                    <div className="local-result">
+                      <div><b>Your Business</b><span>★★★★★ · Nearby</span></div>
+                      <strong>TOP MATCH</strong>
+                    </div>
                   </div>
                 )}
                 {service.number === "03" && (
@@ -264,7 +273,6 @@ export default function Home() {
           <figure className="photo-frame frame-one"><img src="/assets/tnat-client-photo-01.jpg" alt="Marine professional detailing a boat" /><span>REAL PEOPLE</span></figure>
           <figure className="photo-frame frame-two"><img src="/assets/tnat-client-photo-02.jpg" alt="Marine mechanic servicing an outboard motor" /><span>REAL WORK</span></figure>
           <figure className="photo-frame frame-three"><img src="/assets/tnat-client-photo-03.jpg" alt="Close-up of professional ceramic coating work" /><span>REAL PROOF</span></figure>
-          <div className="focus-corners" />
         </div>
         <div className="photo-copy">
           <p className="section-tag light">Optional with every package</p>

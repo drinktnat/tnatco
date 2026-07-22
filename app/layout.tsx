@@ -7,7 +7,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const imageUrl = `${protocol}://${host}/og.png`;
-  const title = "TNAT Co. | Websites. Photos. Leads.";
+  const title = "TNAT Co. | Stand Out. Show Up. Get Chosen.";
   const description = "Custom websites, local visibility, professional photography and simple lead systems for owner-operated local businesses.";
 
   return {
