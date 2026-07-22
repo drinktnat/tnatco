@@ -11,8 +11,8 @@ const services = [
   },
   {
     number: "03",
-    title: "Photos & video",
-    text: "Premium clients get original photography and a short video that show the real people and work behind the business.",
+    title: "Photography & content",
+    text: "Add an annual professional photo refresh to any plan so customers see the real people, work and proof behind the business.",
   },
   {
     number: "04",
@@ -59,12 +59,13 @@ const packages = [
     description: "The complete visual and lead-generation experience.",
     features: [
       "5–7 page custom website",
-      "90-minute professional photo session",
-      "25–30 edited photos",
-      "Short background video",
       "Full local SEO setup",
+      "Google Business setup and management",
+      "Analytics and Search Console",
       "Booking or quote workflow",
       "CRM lead dashboard",
+      "Customer confirmations and alerts",
+      "Newsletter signup integration",
       "Monthly performance report",
       "One hour of priority edits monthly",
     ],
@@ -175,7 +176,36 @@ export default function Home() {
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <span>{service.number}</span>
-              <div className="service-symbol" aria-hidden="true"><i /><i /></div>
+              <div className={`service-visual visual-${service.number}`} aria-hidden="true">
+                {service.number === "01" && (
+                  <div className="graphic-browser">
+                    <div><i /><i /><i /><span>yourbusiness.com</span></div>
+                    <b>Clear service.<br />Clear next step.</b>
+                    <em>GO LIVE ↗</em>
+                  </div>
+                )}
+                {service.number === "02" && (
+                  <div className="graphic-local">
+                    <span className="local-ring"><i /></span>
+                    <b>FOUND NEARBY</b>
+                    <em>LOCAL SEARCH · 3.2 MI</em>
+                  </div>
+                )}
+                {service.number === "03" && (
+                  <div className="graphic-camera">
+                    <span><i /></span>
+                    <b>REAL WORK</b>
+                    <em>ANNUAL CONTENT REFRESH</em>
+                  </div>
+                )}
+                {service.number === "04" && (
+                  <div className="graphic-leads">
+                    <span><i>1</i><b>NEW VISITOR</b></span>
+                    <span><i>2</i><b>QUOTE REQUEST</b></span>
+                    <span><i>✓</i><b>NEW LEAD</b></span>
+                  </div>
+                )}
+              </div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
             </article>
@@ -221,44 +251,55 @@ export default function Home() {
             </article>
           ))}
         </div>
+        <div className="package-add-on">
+          <div><span>Optional annual add-on</span><strong>Photo Refresh · $299</strong></div>
+          <p>Available with any package: a 60-minute local shoot, 20 edited photos and one website image refresh.</p>
+          <a href="#photo-add-on">See the add-on ↓</a>
+        </div>
         <p className="package-note">Domains, advertising and third-party software fees are billed separately when needed. Final scope is confirmed before work begins.</p>
       </section>
 
-      <section className="photo-feature">
-        <div className="photo-collage" aria-hidden="true">
-          <div className="photo-frame frame-one"><span>REAL PEOPLE</span></div>
-          <div className="photo-frame frame-two"><span>REAL WORK</span></div>
-          <div className="photo-frame frame-three"><span>REAL PROOF</span></div>
+      <section className="photo-feature" id="photo-add-on">
+        <div className="photo-collage">
+          <figure className="photo-frame frame-one"><img src="/assets/tnat-client-photo-01.jpg" alt="Marine professional detailing a boat" /><span>REAL PEOPLE</span></figure>
+          <figure className="photo-frame frame-two"><img src="/assets/tnat-client-photo-02.jpg" alt="Marine mechanic servicing an outboard motor" /><span>REAL WORK</span></figure>
+          <figure className="photo-frame frame-three"><img src="/assets/tnat-client-photo-03.jpg" alt="Close-up of professional ceramic coating work" /><span>REAL PROOF</span></figure>
           <div className="focus-corners" />
         </div>
         <div className="photo-copy">
-          <p className="section-tag light">Exclusive to Premium</p>
-          <h2>Stock photos cannot show what makes you different.</h2>
-          <p>Our Premium package includes a focused professional shoot—capturing the people, process, space and details customers want to see before they trust a local business.</p>
+          <p className="section-tag light">Optional with every package</p>
+          <h2>Fresh proof that your business is the real deal.</h2>
+          <p>Add a professional content refresh when you need it. We capture the people, process, space and details customers want to see, then update the strongest images across your website.</p>
+          <div className="photo-price"><span>Annual Photo Refresh</span><strong>$299</strong><em>per session</em></div>
           <div className="photo-stats">
-            <div><strong>90</strong><span>minute session</span></div>
-            <div><strong>25–30</strong><span>edited photos</span></div>
-            <div><strong>1</strong><span>short video</span></div>
+            <div><strong>60</strong><span>minute shoot</span></div>
+            <div><strong>20</strong><span>edited photos</span></div>
+            <div><strong>1</strong><span>website refresh</span></div>
           </div>
+          <p className="photo-footnote">Available in the local service area. Short-form video can be quoted separately.</p>
         </div>
       </section>
 
-      <section className="process section-shell" id="process">
-        <div className="section-heading">
-          <p className="section-tag">How it works</p>
-          <div>
-            <h2>A straightforward path from invisible to established.</h2>
-            <p>We keep the process focused, communicate clearly and make sure you always know what happens next.</p>
+      <section className="process" id="process">
+        <div className="process-grid" aria-hidden="true" />
+        <div className="process-inner section-shell">
+          <div className="section-heading">
+            <p className="section-tag light">The TNAT method</p>
+            <div>
+              <h2>From first conversation to live website—without the usual mess.</h2>
+              <p>Four clear milestones. One accountable partner. You always know what is happening and what we need from you.</p>
+            </div>
           </div>
-        </div>
-        <div className="steps">
-          {steps.map(([number, title, text]) => (
-            <article key={number}>
-              <span>{number}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </article>
-          ))}
+          <div className="steps">
+            {steps.map(([number, title, text], index) => (
+              <article key={number}>
+                <div className="step-top"><span>{number}</span><i>{index === steps.length - 1 ? "✓" : "→"}</i></div>
+                <h3>{title}</h3>
+                <p>{text}</p>
+                <em>{index === steps.length - 1 ? "LAUNCH" : "NEXT STEP"}</em>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
