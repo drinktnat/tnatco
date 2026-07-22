@@ -20,8 +20,9 @@ export default function AboutPage() {
           <a href="/#process">Process</a>
           <a href="/#faq">Questions</a>
           <a href="/about" aria-current="page">About</a>
+          <a href="/contact">Contact</a>
         </nav>
-        <a className="header-cta" href={inquiryHref}>Request a demo</a>
+        <a className="header-cta" href="/contact">Contact us</a>
       </header>
 
       <section className="about-hero">
@@ -61,23 +62,18 @@ export default function AboutPage() {
       <section className="mission">
         <div className="mission-grid" aria-hidden="true" />
         <div className="mission-inner section-shell">
-          <p className="section-tag light">Our mission</p>
-          <h2>TNAT Co. exists to help local businesses build a modern online presence that earns trust before a customer ever walks through the door.</h2>
-          <div className="mission-lines">
-            <p>We don’t just build websites.</p>
-            <p className="mission-emphasis">We build confidence.</p>
-            <p>When someone searches for a business online, everything they see should make them comfortable enough to call.</p>
-            <strong>That is what TNAT sells.</strong>
+          <div className="mission-heading">
+            <p className="section-tag light">Our mission</p>
+            <span>02 / WHY WE EXIST</span>
           </div>
-        </div>
-      </section>
-
-      <section className="about-principles section-shell">
-        <p className="section-tag">What guides the work</p>
-        <div className="principle-grid">
-          <article><span>01</span><h3>Earn trust early</h3><p>Your online presence should make a strong first impression before a customer ever reaches out.</p></article>
-          <article><span>02</span><h3>Make quality visible</h3><p>The website should clearly show the people, work and proof that make the business worth choosing.</p></article>
-          <article><span>03</span><h3>Keep the next step clear</h3><p>Every page should help the right customer feel comfortable enough to call, book or request a quote.</p></article>
+          <div className="mission-layout">
+            <h2>We don’t just build websites.<br /><em>We build confidence.</em></h2>
+            <div className="mission-copy">
+              <p className="mission-lead">TNAT Co. exists to help local businesses build a modern online presence that earns trust before a customer ever walks through the door.</p>
+              <p>When someone searches for a business online, everything they see should make them comfortable enough to call.</p>
+              <strong>That is what TNAT sells.</strong>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -102,7 +98,7 @@ export default function AboutPage() {
           <a href="/#services">Services</a>
           <a href="/#packages">Packages</a>
           <a href="/about">About</a>
-          <a href="mailto:contact@tnatco.com">Contact</a>
+          <a href="/contact">Contact</a>
         </div>
         <span>© 2026 TNAT Co. LLC · South Florida</span>
       </footer>

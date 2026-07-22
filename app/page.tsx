@@ -109,8 +109,9 @@ export default function Home() {
           <a href="#process">Process</a>
           <a href="#faq">Questions</a>
           <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </nav>
-        <a className="header-cta" href={inquiryHref}>Request a demo</a>
+        <a className="header-cta" href="/contact">Contact us</a>
       </header>
 
       <section className="hero">
@@ -365,7 +366,8 @@ export default function Home() {
           <a href="#services">Services</a>
           <a href="#packages">Packages</a>
           <a href="#process">Process</a>
-          <a href="mailto:contact@tnatco.com">Contact</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
         </div>
         <span>© 2026 TNAT Co. LLC · South Florida</span>
       </footer>
