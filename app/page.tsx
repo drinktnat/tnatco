@@ -1,127 +1,181 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-
 const services = [
   {
     number: "01",
-    title: "Fiberglass & gelcoat",
-    text: "Structural fiberglass repair, finish restoration and detail-driven gelcoat work for a clean, durable result.",
+    title: "Custom websites",
+    text: "A sharp, mobile-first website that makes your business look established and makes the next step obvious.",
   },
   {
     number: "02",
-    title: "Bottom painting",
-    text: "Surface preparation and antifouling applications designed around how and where your boat is used.",
+    title: "Local visibility",
+    text: "Search-friendly pages, Google Business connection and the essentials that help nearby customers find you.",
   },
   {
     number: "03",
-    title: "Engine service",
-    text: "Maintenance and repair for outboard engines, with publicly listed specialization in Tohatsu and service for all outboard brands.",
+    title: "Photos & video",
+    text: "Premium clients get original photography and a short video that show the real people and work behind the business.",
   },
   {
     number: "04",
-    title: "Marine electronics",
-    text: "Repair and installation for navigation, audio and onboard electronics, including Garmin, Fusion, Wet Sounds and Simrad systems.",
-  },
-  {
-    number: "05",
-    title: "Custom fabrication",
-    text: "Purpose-built marine components and structural improvements shaped around the vessel and the owner’s needs.",
-  },
-  {
-    number: "06",
-    title: "Fuel tanks & livewells",
-    text: "Repair and custom installation work for fuel tanks and livewells, planned for fit, function and reliable time on the water.",
+    title: "Leads without chaos",
+    text: "Quote requests, booking links, CRM-ready intake and clear notifications—built around how you already operate.",
   },
 ];
 
-const reviews = [
+const packages = [
   {
-    quote: "Great attention to detail… very communicative and transparent with pricing.",
-    name: "Zak Rockwell",
-    detail: "Google review · excerpt",
+    name: "Basic",
+    price: "$499",
+    cadence: "+ $99/year hosting",
+    description: "For a business that simply needs to look legitimate online.",
+    features: [
+      "1–3 page custom website",
+      "Your existing photos and branding",
+      "Mobile-friendly design",
+      "Basic search setup",
+      "Contact form and click-to-call",
+      "One revision round",
+    ],
   },
   {
-    quote: "Beautiful work, speedy time, honest and affordable pricing.",
-    name: "Lisa Noakes",
-    detail: "Google review · excerpt",
+    name: "Professional",
+    price: "$749",
+    cadence: "+ $99/month",
+    description: "For an owner who wants the website handled after launch.",
+    featured: true,
+    features: [
+      "4–5 page custom website",
+      "Local SEO foundations",
+      "Google Business connection",
+      "Visitor tracking",
+      "Quote or booking integration",
+      "Hosting, backups and updates",
+      "Up to 30 minutes of edits monthly",
+    ],
+  },
+  {
+    name: "Premium",
+    price: "$1,199",
+    cadence: "+ $179/month",
+    description: "The complete visual and lead-generation experience.",
+    features: [
+      "5–7 page custom website",
+      "90-minute professional photo session",
+      "25–30 edited photos",
+      "Short background video",
+      "Full local SEO setup",
+      "Booking or quote workflow",
+      "CRM lead dashboard",
+      "Monthly performance report",
+      "One hour of priority edits monthly",
+    ],
   },
 ];
+
+const steps = [
+  ["01", "We learn the business", "A short conversation gives us the services, customers, voice and goal."],
+  ["02", "We gather the proof", "Photos, reviews, service details and your best work become the building blocks."],
+  ["03", "We build and refine", "You review a complete direction, then we make the agreed revisions."],
+  ["04", "We launch and manage", "The site goes live on your domain, and ongoing clients send updates to us."],
+];
+
+const faqs = [
+  ["Do I own my website and domain?", "Yes. Your domain and business accounts stay in your name. TNAT Co. receives only the access needed to build and manage the work."],
+  ["Can you connect online booking?", "Yes. We can connect trusted booking platforms, quote forms and restaurant reservation services instead of rebuilding sensitive systems from scratch."],
+  ["What if I already have photos?", "We can optimize strong existing photos for the Basic and Professional plans. Original professional photography is included only with Premium."],
+  ["Can you update specials, photos or reviews?", "Yes. Professional and Premium include monthly edit time. Larger campaigns and frequent promotional emails can be added later."],
+  ["Do you only work with marine businesses?", "No. TNAT Co. is built for local service businesses—from marine shops and mechanics to contractors, restaurants, salons and more."],
+];
+
+const inquiryHref =
+  "mailto:contact@tnatco.com?subject=Free%20homepage%20concept&body=Business%20name%3A%0AWebsite%20or%20social%20link%3A%0AWhat%20I%20want%20the%20website%20to%20help%20with%3A";
 
 export default function Home() {
-  const [sent, setSent] = useState(false);
-
-  function submitDemo(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    setSent(true);
-  }
-
   return (
-    <main>
-      <div className="demo-bar">
-        <span>Unofficial redesign concept</span>
-        <p>Not commissioned by or affiliated with Scallywags Boatworks LLC.</p>
+    <main id="top">
+      <div className="topline">
+        <span>Stuart, Florida</span>
+        <strong>Websites. Photos. Leads.</strong>
+        <span>Built for local business</span>
       </div>
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="Scallywags Boatworks concept home">
-          <span className="brand-mark">S</span>
-          <span className="brand-copy">
-            <strong>Scallywags</strong>
-            <small>Boatworks · Stuart, Florida</small>
-          </span>
+        <a className="brand" href="#top" aria-label="TNAT Co. home">
+          <img src="/assets/tnat-co-horizontal.png" alt="TNAT Co." />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#services">Services</a>
-          <a href="#work">Approach</a>
-          <a href="#reviews">Reviews</a>
+          <a href="#packages">Packages</a>
+          <a href="#process">Process</a>
+          <a href="#faq">Questions</a>
         </nav>
-        <a className="header-call" href="tel:+17079008139">
-          <span>Call or text</span>
-          707-900-8139
-        </a>
+        <a className="header-cta" href={inquiryHref}>Request a demo</a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="hero-image" aria-hidden="true" />
-        <div className="hero-shade" />
-        <div className="hero-content">
-          <p className="eyebrow">Marine repair & restoration · Treasure Coast</p>
-          <h1>Craftsmanship that gets you back on the water.</h1>
+      <section className="hero">
+        <div className="hero-copy">
+          <p className="kicker"><span /> Custom online presence for owner-operated businesses</p>
+          <h1>Look established.<br />Get found.<br /><em>Win the next call.</em></h1>
           <p className="hero-lede">
-            Fiberglass, gelcoat, bottom paint, engine service, electronics and custom marine work—all under one Stuart roof.
+            TNAT Co. builds and manages sharp websites, local visibility, professional content and simple lead systems—so you can stay focused on the work customers pay you to do.
           </p>
           <div className="hero-actions">
-            <a className="button button-primary" href="#request">Request service</a>
-            <a className="button button-ghost" href="tel:+17079008139">Call 707-900-8139</a>
+            <a className="button button-dark" href={inquiryHref}>Get a free homepage concept <span>↗</span></a>
+            <a className="button button-light" href="#packages">See packages</a>
+          </div>
+          <p className="hero-note">No pressure. We show you what your business could look like first.</p>
+        </div>
+
+        <div className="hero-showcase" aria-label="Example of a TNAT Co. customer journey">
+          <div className="showcase-label">From search to customer</div>
+          <div className="search-card">
+            <span className="search-icon">⌕</span>
+            <div><small>LOCAL SEARCH</small><strong>Best service near me</strong></div>
+            <span className="search-arrow">↗</span>
+          </div>
+          <div className="website-card">
+            <div className="browser-bar"><i /><i /><i /><span>yourbusiness.com</span></div>
+            <div className="website-preview">
+              <small>LOCAL EXPERTS · TRUSTED WORK</small>
+              <strong>Clear service.<br />Clear next step.</strong>
+              <span>REQUEST A QUOTE →</span>
+            </div>
+          </div>
+          <div className="lead-card">
+            <span className="lead-check">✓</span>
+            <div><small>NEW LEAD</small><strong>Quote request received</strong></div>
+            <span>Now</span>
+          </div>
+          <div className="orbit orbit-one" />
+          <div className="orbit orbit-two" />
+        </div>
+      </section>
+
+      <section className="proof-strip" aria-label="TNAT Co. principles">
+        <div><strong>01</strong><span>Built around your real business</span></div>
+        <div><strong>02</strong><span>Your accounts stay yours</span></div>
+        <div><strong>03</strong><span>Ongoing help after launch</span></div>
+      </section>
+
+      <section className="industries">
+        <p>Made for the businesses that keep a community moving</p>
+        <div className="industry-list">
+          <span>Marine</span><i>✦</i><span>Contractors</span><i>✦</i><span>Restaurants</span><i>✦</i><span>Mechanics</span><i>✦</i><span>Home services</span><i>✦</i><span>Local experts</span>
+        </div>
+      </section>
+
+      <section className="services section-shell" id="services">
+        <div className="section-heading">
+          <p className="section-tag">What we handle</p>
+          <div>
+            <h2>Your online presence,<br />under one roof.</h2>
+            <p>You should not need five different vendors—or a technology degree—to look professional and respond to customers online.</p>
           </div>
         </div>
-        <div className="hero-proof">
-          <div><strong>4.7</strong><span>Public rating</span></div>
-          <div><strong>13</strong><span>Public reviews</span></div>
-          <div><strong>2019</strong><span>Florida LLC filed</span></div>
-        </div>
-      </section>
-
-      <section className="intro section-shell">
-        <p className="section-tag">Full-service boatworks</p>
-        <div>
-          <h2>One shop. From the hull up.</h2>
-          <p>
-            The strongest marine-service sites make the next step obvious. This concept organizes Scallywags’ publicly listed capabilities into a clear path from problem to conversation.
-          </p>
-        </div>
-      </section>
-
-      <section className="services" id="services">
-        <div className="section-shell services-heading">
-          <p className="section-tag light">Capabilities</p>
-          <h2>Built for the work boats actually need.</h2>
-        </div>
-        <div className="service-grid section-shell">
+        <div className="service-grid">
           {services.map((service) => (
             <article className="service-card" key={service.number}>
               <span>{service.number}</span>
+              <div className="service-symbol" aria-hidden="true"><i /><i /></div>
               <h3>{service.title}</h3>
               <p>{service.text}</p>
             </article>
@@ -129,94 +183,137 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="approach section-shell" id="work">
-        <div className="approach-visual">
-          <div className="hull-line" />
-          <p>Repair with a restoration mindset.</p>
-        </div>
-        <div className="approach-copy">
-          <p className="section-tag">The Scallywags approach</p>
-          <h2>Clear answers before the work begins.</h2>
-          <div className="steps">
-            <div><span>01</span><p><strong>Tell us about the boat.</strong> Share the vessel, location and issue so the right conversation starts quickly.</p></div>
-            <div><span>02</span><p><strong>Review the scope.</strong> Discuss the repair path, materials, timing and expectations before authorizing work.</p></div>
-            <div><span>03</span><p><strong>Get back to boating.</strong> Receive the finished vessel with the completed work explained clearly.</p></div>
+      <section className="statement">
+        <div className="statement-grid" aria-hidden="true" />
+        <div className="statement-copy section-shell">
+          <p className="section-tag light">The standard</p>
+          <h2>Your website should do the explaining while <em>you do the work.</em></h2>
+          <div className="outcomes">
+            <div><strong>Be trusted</strong><span>Look credible before the customer ever calls.</span></div>
+            <div><strong>Be found</strong><span>Give local search engines clear information to understand.</span></div>
+            <div><strong>Be contacted</strong><span>Turn attention into calls, quotes and appointments.</span></div>
           </div>
         </div>
       </section>
 
-      <section className="review-section" id="reviews">
-        <div className="section-shell review-layout">
+      <section className="packages section-shell" id="packages">
+        <div className="section-heading package-heading">
+          <p className="section-tag">Simple packages</p>
           <div>
-            <p className="section-tag light">Customer perspective</p>
-            <h2>Known for detail, communication and quality work.</h2>
-            <a className="text-link" href="https://reviews.birdeye.com/scallywags-boatworks-llc-170663960857348" target="_blank" rel="noreferrer">
-              View public review source ↗
-            </a>
+            <h2>Start where the business is now.</h2>
+            <p>Clear setup pricing. Practical ongoing support. No giant agency contract.</p>
           </div>
-          <div className="review-cards">
-            {reviews.map((review) => (
-              <blockquote key={review.name}>
-                <div className="stars" aria-label="Five stars">★★★★★</div>
-                <p>“{review.quote}”</p>
-                <footer><strong>{review.name}</strong><span>{review.detail}</span></footer>
-              </blockquote>
-            ))}
+        </div>
+        <div className="package-grid">
+          {packages.map((plan) => (
+            <article className={`package-card${plan.featured ? " featured" : ""}`} key={plan.name}>
+              {plan.featured && <div className="popular">Most popular</div>}
+              <div className="package-top">
+                <span>{plan.name}</span>
+                <p>{plan.description}</p>
+              </div>
+              <div className="price"><strong>{plan.price}</strong><span>setup</span></div>
+              <div className="cadence">{plan.cadence}</div>
+              <ul>
+                {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
+              </ul>
+              <a href={inquiryHref}>Choose {plan.name} <span>↗</span></a>
+            </article>
+          ))}
+        </div>
+        <p className="package-note">Domains, advertising and third-party software fees are billed separately when needed. Final scope is confirmed before work begins.</p>
+      </section>
+
+      <section className="photo-feature">
+        <div className="photo-collage" aria-hidden="true">
+          <div className="photo-frame frame-one"><span>REAL PEOPLE</span></div>
+          <div className="photo-frame frame-two"><span>REAL WORK</span></div>
+          <div className="photo-frame frame-three"><span>REAL PROOF</span></div>
+          <div className="focus-corners" />
+        </div>
+        <div className="photo-copy">
+          <p className="section-tag light">Exclusive to Premium</p>
+          <h2>Stock photos cannot show what makes you different.</h2>
+          <p>Our Premium package includes a focused professional shoot—capturing the people, process, space and details customers want to see before they trust a local business.</p>
+          <div className="photo-stats">
+            <div><strong>90</strong><span>minute session</span></div>
+            <div><strong>25–30</strong><span>edited photos</span></div>
+            <div><strong>1</strong><span>short video</span></div>
           </div>
         </div>
       </section>
 
-      <section className="request section-shell" id="request">
-        <div className="request-copy">
-          <p className="section-tag">Start the conversation</p>
-          <h2>What does your boat need?</h2>
-          <p>Give the shop the essentials up front so the first call can focus on the repair—not basic intake.</p>
-          <div className="location-card">
-            <span>Shop</span>
-            <strong>2660 SE Fairmont St<br />Stuart, FL 34997</strong>
-            <a href="https://maps.google.com/?q=2660+SE+Fairmont+St+Stuart+FL+34997" target="_blank" rel="noreferrer">Open map ↗</a>
+      <section className="process section-shell" id="process">
+        <div className="section-heading">
+          <p className="section-tag">How it works</p>
+          <div>
+            <h2>A straightforward path from invisible to established.</h2>
+            <p>We keep the process focused, communicate clearly and make sure you always know what happens next.</p>
           </div>
         </div>
+        <div className="steps">
+          {steps.map(([number, title, text]) => (
+            <article key={number}>
+              <span>{number}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <form onSubmit={submitDemo}>
-          <div className="form-note">Demo form only · no information is transmitted</div>
-          <div className="field-row">
-            <label>Name<input required name="name" placeholder="Your name" /></label>
-            <label>Phone<input required name="phone" type="tel" placeholder="(772) 555-0123" /></label>
+      <section className="ownership">
+        <div className="ownership-inner section-shell">
+          <p className="section-tag light">Built on trust</p>
+          <h2>Your domain. Your accounts. Your business.</h2>
+          <p>We build the system and manage the details, but the important business assets stay in your name. You are never trapped because someone else owns your online presence.</p>
+          <div className="ownership-badges">
+            <span>✓ Client-owned domain</span>
+            <span>✓ Secure managed platforms</span>
+            <span>✓ Clear monthly scope</span>
           </div>
-          <div className="field-row">
-            <label>Boat make & model<input name="boat" placeholder="Example: 24' Pathfinder" /></label>
-            <label>Engine<input name="engine" placeholder="Example: Tohatsu 250" /></label>
-          </div>
-          <label>Service needed
-            <select name="service" defaultValue="">
-              <option value="" disabled>Select a service</option>
-              <option>Fiberglass or gelcoat</option>
-              <option>Bottom painting</option>
-              <option>Engine service</option>
-              <option>Marine electronics</option>
-              <option>Custom fabrication</option>
-              <option>Fuel tank or livewell</option>
-            </select>
-          </label>
-          <label>Tell us what is happening<textarea name="details" rows={4} placeholder="Describe the issue, timing and where the boat is located." /></label>
-          <button className="button button-dark" type="submit">Preview request flow</button>
-          {sent && <p className="success" role="status">Demo complete. A live version would securely deliver this request to the shop.</p>}
-        </form>
+        </div>
+      </section>
+
+      <section className="faq section-shell" id="faq">
+        <div className="faq-title">
+          <p className="section-tag">Common questions</p>
+          <h2>Before we work together.</h2>
+        </div>
+        <div className="faq-list">
+          {faqs.map(([question, answer], index) => (
+            <details key={question} open={index === 0}>
+              <summary><span>{String(index + 1).padStart(2, "0")}</span>{question}<i>+</i></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <section className="final-cta">
+        <div className="cta-monogram" aria-hidden="true">
+          <img src="/assets/tnat-co-monogram.png" alt="" />
+        </div>
+        <div className="final-copy">
+          <p>YOUR NEXT CUSTOMER IS ALREADY SEARCHING.</p>
+          <h2>Let’s make sure they find something worth choosing.</h2>
+          <a className="button button-white" href={inquiryHref}>Request a free homepage concept <span>↗</span></a>
+          <a className="email-link" href="mailto:contact@tnatco.com">contact@tnatco.com</a>
+        </div>
       </section>
 
       <footer className="footer">
-        <div className="footer-main section-shell">
-          <div className="footer-brand">
-            <span className="brand-mark inverse">S</span>
-            <div><strong>Scallywags Boatworks</strong><p>Boat repair and restoration in Stuart, Florida.</p></div>
-          </div>
-          <a href="tel:+17079008139">707-900-8139</a>
+        <a className="footer-brand" href="#top" aria-label="Back to top">
+          <img src="/assets/tnat-co-horizontal.png" alt="TNAT Co." />
+        </a>
+        <p>Custom websites and online presence for local business.</p>
+        <div>
+          <a href="#services">Services</a>
+          <a href="#packages">Packages</a>
+          <a href="#process">Process</a>
+          <a href="mailto:contact@tnatco.com">Contact</a>
         </div>
-        <div className="footer-bottom section-shell">
-          <p>Unofficial portfolio concept. Business details should be confirmed by the owner before publication.</p>
-          <p>Public information accessed July 2026.</p>
-        </div>
+        <span>© 2026 TNAT Co. LLC · Stuart, Florida</span>
       </footer>
     </main>
   );

@@ -7,14 +7,15 @@ export async function generateMetadata(): Promise<Metadata> {
   const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
   const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
   const imageUrl = `${protocol}://${host}/og.png`;
-  const title = "Scallywags Boatworks | Unofficial Website Concept";
-  const description = "An unofficial redesign concept for a Stuart, Florida boat repair and restoration business.";
+  const title = "TNAT Co. | Websites. Photos. Leads.";
+  const description = "Custom websites, local visibility, professional photography and simple lead systems for owner-operated local businesses.";
 
   return {
     title,
     description,
     openGraph: { title, description, images: [{ url: imageUrl, width: 1200, height: 630 }] },
     twitter: { card: "summary_large_image", title, description, images: [imageUrl] },
+    icons: { icon: "/assets/tnat-co-monogram.png" },
   };
 }
 
