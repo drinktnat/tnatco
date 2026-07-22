@@ -129,25 +129,37 @@ export default function Home() {
         </div>
 
         <div className="hero-showcase" aria-label="Example of a TNAT Co. customer journey">
-          <div className="showcase-label">From search to customer</div>
+          <div className="showcase-glow" aria-hidden="true" />
+          <div className="showcase-topline">
+            <span>From search to customer</span>
+            <strong>01 → 02 → 03</strong>
+          </div>
+          <div className="journey-pill" aria-hidden="true">
+            <span>Found</span><i>→</i><span>Trusted</span><i>→</i><span>Contacted</span>
+          </div>
           <div className="search-card">
             <span className="search-icon">⌕</span>
             <div><small>LOCAL SEARCH</small><strong>Best service near me</strong></div>
             <span className="search-arrow">↗</span>
           </div>
-          <div className="website-card">
-            <div className="browser-bar"><i /><i /><i /><span>yourbusiness.com</span></div>
-            <div className="website-preview">
-              <small>LOCAL EXPERTS · TRUSTED WORK</small>
-              <strong>Clear service.<br />Clear next step.</strong>
-              <span>REQUEST A QUOTE →</span>
+          <div className="website-stack">
+            <div className="stack-sheet stack-sheet-one" aria-hidden="true" />
+            <div className="stack-sheet stack-sheet-two" aria-hidden="true" />
+            <div className="website-card">
+              <div className="browser-bar"><i /><i /><i /><span>yourbusiness.com</span></div>
+              <div className="website-preview">
+                <small>LOCAL EXPERTS · TRUSTED WORK</small>
+                <strong>Clear service.<br />Clear next step.</strong>
+                <span>REQUEST A QUOTE →</span>
+              </div>
             </div>
           </div>
           <div className="lead-card">
-            <span className="lead-check">✓</span>
+            <span className="lead-check"><i />✓</span>
             <div><small>NEW LEAD</small><strong>Quote request received</strong></div>
             <span>Now</span>
           </div>
+          <div className="choice-stamp" aria-hidden="true"><small>THE RESULT</small><strong>Chosen.</strong></div>
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
         </div>

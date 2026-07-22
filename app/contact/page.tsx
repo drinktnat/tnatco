@@ -28,7 +28,7 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="contact-intro section-shell">
           <p className="kicker"><span /> Let’s talk about your business</p>
-          <h1>Ready to look as professional online as you are <em>in real life?</em></h1>
+          <h1>Ready to turn more searches into <em>customers?</em></h1>
           <p>Tell us where your business is today and what you want the website to accomplish. We’ll help you choose a clear next step.</p>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function ContactPage() {
           <a className="contact-option" href="tel:+17724867605">
             <span>01 / PHONE</span>
             <strong>(772) 486-7605</strong>
-            <p>Call or text Trevor directly.</p>
+            <p>Call or text us directly.</p>
             <i aria-hidden="true">↗</i>
           </a>
           <a className="contact-option" href={emailHref}>
