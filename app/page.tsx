@@ -12,7 +12,7 @@ const services = [
   {
     number: "03",
     title: "Photography & content",
-    text: "Add an annual professional photo refresh to any plan so customers see the real people, work and proof behind the business.",
+    text: "Choose a professional photo shoot or a photo-and-video session to show the real people, work and proof behind the business.",
   },
   {
     number: "04",
@@ -84,7 +84,7 @@ const faqs = [
   ["Can you connect online booking?", "Yes. We can connect trusted booking platforms, quote forms and restaurant reservation services instead of rebuilding sensitive systems from scratch."],
   ["What if I already have photos?", "We can optimize strong existing photos for any plan. If you need fresh content later, the professional photo refresh is available as an optional add-on."],
   ["Can you update specials, photos or reviews?", "Yes. Professional and Premium include monthly edit time. Larger campaigns and frequent promotional emails can be added later."],
-  ["Do you only work with marine businesses?", "No. TNAT Co. is built for local service businesses—from marine shops and mechanics to contractors, restaurants, salons and more."],
+  ["Can I start small and upgrade later?", "Yes. You can start with a Basic website, then add ongoing management, stronger local SEO, CRM tools, photography or video as the business grows."],
 ];
 
 const inquiryHref =
@@ -95,7 +95,7 @@ export default function Home() {
     <main id="top">
       <div className="topline">
         <span>Stuart, Florida</span>
-        <strong>Stand out. Show up. Get chosen.</strong>
+        <strong>Look professional. Get found. Stay busy.</strong>
         <span>Built for local businesses</span>
       </div>
 
@@ -186,18 +186,17 @@ export default function Home() {
                 )}
                 {service.number === "02" && (
                   <div className="graphic-local">
-                    <div className="local-search-bar"><i>⌕</i><span>service near me</span><b>↗</b></div>
-                    <div className="local-map">
-                      <span className="map-road road-one" />
-                      <span className="map-road road-two" />
-                      <span className="map-road road-three" />
-                      <i className="map-pin"><b /></i>
-                      <em>3.2 MI</em>
-                    </div>
-                    <div className="local-result">
-                      <div><b>Your Business</b><span>★★★★★ · Nearby</span></div>
+                    <div className="local-search-bar"><i>⌕</i><span>best service near me</span><b>SEARCH</b></div>
+                    <div className="local-listing featured-listing">
+                      <span className="listing-rank">01</span>
+                      <div><b>Your Business</b><em>★★★★★ 4.9 · Open now</em><small>WEBSITE · CALL · DIRECTIONS</small></div>
                       <strong>TOP MATCH</strong>
                     </div>
+                    <div className="local-listing muted-listing">
+                      <span className="listing-rank">02</span>
+                      <div><b>Nearby Service</b><em>★★★★☆ 4.3 · 4.8 mi</em></div>
+                    </div>
+                    <div className="local-signal"><span>PROFILE</span><div><i /><i /><i /></div><b>READY TO BE FOUND</b></div>
                   </div>
                 )}
                 {service.number === "03" && (
@@ -261,9 +260,9 @@ export default function Home() {
           ))}
         </div>
         <div className="package-add-on">
-          <div><span>Optional annual add-on</span><strong>Photo Refresh · $299</strong></div>
-          <p>Available with any package: a 60-minute local shoot, 20 edited photos and one website image refresh.</p>
-          <a href="#photo-add-on">See the add-on ↓</a>
+          <div><span>Optional content add-on</span><strong>Photo Shoot · from $299</strong></div>
+          <p>Choose a professional photo shoot, or combine photos with short- or long-form video quoted to fit the project.</p>
+          <a href="#photo-add-on">See content options ↓</a>
         </div>
         <p className="package-note">Domains, advertising and third-party software fees are billed separately when needed. Final scope is confirmed before work begins.</p>
       </section>
@@ -277,14 +276,19 @@ export default function Home() {
         <div className="photo-copy">
           <p className="section-tag light">Optional with every package</p>
           <h2>Fresh proof that your business is the real deal.</h2>
-          <p>Add a professional content refresh when you need it. We capture the people, process, space and details customers want to see, then update the strongest images across your website.</p>
-          <div className="photo-price"><span>Annual Photo Refresh</span><strong>$299</strong><em>per session</em></div>
-          <div className="photo-stats">
-            <div><strong>60</strong><span>minute shoot</span></div>
-            <div><strong>20</strong><span>edited photos</span></div>
-            <div><strong>1</strong><span>website refresh</span></div>
+          <p>Choose the content your business needs. Book a professional photo shoot, or add video to show the people, process and work customers want to see.</p>
+          <div className="content-options">
+            <div className="content-option">
+              <div><span>Photos only</span><strong>Professional Photo Shoot</strong></div>
+              <em>$299</em>
+            </div>
+            <div className="content-option">
+              <div><span>Photo + video</span><strong>Complete Content Session</strong></div>
+              <em>Custom quote</em>
+            </div>
           </div>
-          <p className="photo-footnote">Available in the local service area. Short-form video can be quoted separately.</p>
+          <div className="content-formats"><span>Professional photos</span><span>Short-form video</span><span>Long-form video</span></div>
+          <p className="photo-footnote">Photo shoots are available in the local service area. Short-form and long-form video are quoted based on the project.</p>
         </div>
       </section>
 
@@ -294,7 +298,7 @@ export default function Home() {
           <div className="section-heading">
             <p className="section-tag light">The TNAT method</p>
             <div>
-              <h2>From first conversation to live website—without the usual mess.</h2>
+              <h2 className="process-title">From first conversation<br /><span>to live website—</span><br /><em>without the usual mess.</em></h2>
               <p>Four clear milestones. One accountable partner. You always know what is happening and what we need from you.</p>
             </div>
           </div>
@@ -355,7 +359,7 @@ export default function Home() {
         <a className="footer-brand" href="#top" aria-label="Back to top">
           <img src="/assets/tnat-co-horizontal.png" alt="TNAT Co." />
         </a>
-        <p>Custom websites and online presence for local business.</p>
+        <p>Custom websites and online presence for local businesses.</p>
         <div>
           <a href="#services">Services</a>
           <a href="#packages">Packages</a>
