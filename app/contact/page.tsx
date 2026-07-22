@@ -52,6 +52,11 @@ export default function ContactPage() {
             <i aria-hidden="true">↗</i>
           </a>
         </div>
+        <aside className="contact-privacy-note">
+          <span aria-hidden="true">✓</span>
+          <div><strong>Your privacy matters.</strong><p>We use the information you send us only to respond, discuss your project and provide requested services. We do not sell your personal information.</p></div>
+          <a href="/privacy">Read our Privacy Policy →</a>
+        </aside>
       </section>
 
       <section className="contact-prep">
@@ -77,6 +82,7 @@ export default function ContactPage() {
           <a href="/#packages">Packages</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
         </div>
         <span>© 2026 TNAT Co. LLC · South Florida</span>
       </footer>

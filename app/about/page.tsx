@@ -99,6 +99,7 @@ export default function AboutPage() {
           <a href="/#packages">Packages</a>
           <a href="/about">About</a>
           <a href="/contact">Contact</a>
+          <a href="/privacy">Privacy</a>
         </div>
         <span>© 2026 TNAT Co. LLC · South Florida</span>
       </footer>
