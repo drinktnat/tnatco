@@ -133,10 +133,10 @@ export default function ServiceRequestForm() {
         </label>
         <label>
           <span>When would you like to start?</span>
-          <select name="Desired timeline" defaultValue="Within 1 week">
+          <select name="Desired timeline" defaultValue="ASAP">
+            <option>ASAP</option>
             <option>Within 1 week</option>
-            <option>Within 2 weeks</option>
-            <option>Within 1 month</option>
+            <option>Within a month</option>
             <option>Still exploring options</option>
           </select>
         </label>
