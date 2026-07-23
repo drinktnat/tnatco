@@ -60,19 +60,19 @@ export default function ContactPage() {
             <span>01 / PHONE</span>
             <strong>(772) 486-7605</strong>
             <p>Call or text us directly.</p>
-            <i aria-hidden="true">↗</i>
+            <i className="clean-arrow" aria-hidden="true" />
           </a>
           <a className="contact-option" href={emailHref}>
             <span>02 / EMAIL</span>
             <strong>contact@tnatco.com</strong>
             <p>Send your business name, current online presence and what you want help with.</p>
-            <i aria-hidden="true">↗</i>
+            <i className="clean-arrow" aria-hidden="true" />
           </a>
         </div>
         <aside className="contact-privacy-note">
           <span aria-hidden="true">✓</span>
           <div><strong>Your privacy matters.</strong><p>We use the information you send us only to respond, discuss your project and provide requested services. We do not sell your personal information.</p></div>
-          <a href="/privacy">Read our Privacy Policy →</a>
+          <a href="/privacy">Read our Privacy Policy <span className="clean-arrow" aria-hidden="true" /></a>
         </aside>
       </section>
 
@@ -85,7 +85,7 @@ export default function ContactPage() {
             <span>02</span><p>Your current website or social media, if you have one</p>
             <span>03</span><p>What you want customers to do: call, book, visit or request a quote</p>
           </div>
-          <a className="button button-white" href="#request">Start your request <span>↗</span></a>
+          <a className="button button-white" href="#request">Start your request <span className="clean-arrow" aria-hidden="true" /></a>
         </div>
       </section>
 

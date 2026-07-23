@@ -125,7 +125,7 @@ export default function Home() {
             TNAT Co. builds and manages sharp websites, local visibility, professional content and simple lead systems—so you can stay focused on the work customers pay you to do.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href={inquiryHref}>Get a free homepage concept <span>↗</span></a>
+            <a className="button button-dark" href={inquiryHref}>Get a free homepage concept <span className="clean-arrow" aria-hidden="true" /></a>
             <a className="button button-light" href="#packages">See packages</a>
           </div>
           <p className="hero-note">No pressure. We show you what your business could look like first.</p>
@@ -196,7 +196,7 @@ export default function Home() {
                   <div className="graphic-browser">
                     <div><i /><i /><i /><span>yourbusiness.com</span></div>
                     <b>Clear service.<br />Clear next step.</b>
-                    <em>GO LIVE ↗</em>
+                    <em>GO LIVE <span className="clean-arrow" aria-hidden="true" /></em>
                   </div>
                 )}
                 {service.number === "02" && (
@@ -280,7 +280,7 @@ export default function Home() {
         <div className="package-add-on">
           <div><span>Optional content add-on</span><strong>Photo Shoot · from $299</strong></div>
           <p>Choose a professional photo shoot, or combine photos with short- or long-form video quoted to fit the project.</p>
-          <a href="#photo-add-on">See content options ↓</a>
+          <a href="#photo-add-on">See content options <span className="clean-arrow clean-arrow-down" aria-hidden="true" /></a>
         </div>
         <p className="package-note">Domains, advertising and third-party software fees are billed separately when needed. Final scope is confirmed before work begins.</p>
       </section>
@@ -323,7 +323,10 @@ export default function Home() {
           <div className="steps">
             {steps.map(([number, title, text], index) => (
               <article key={number}>
-                <div className="step-top"><span>{number}</span><i>{index === steps.length - 1 ? "✓" : "→"}</i></div>
+                <div className="step-top">
+                  <span>{number}</span>
+                  <i className={index === steps.length - 1 ? "step-check" : "clean-arrow step-flow-arrow"} aria-hidden="true" />
+                </div>
                 <h3>{title}</h3>
                 <p>{text}</p>
                 <em>{index === steps.length - 1 ? "LAUNCH" : "NEXT STEP"}</em>
@@ -368,7 +371,7 @@ export default function Home() {
         <div className="final-copy">
           <p>YOUR NEXT CUSTOMER IS ALREADY SEARCHING.</p>
           <h2>Let’s make sure they find something worth choosing.</h2>
-          <a className="button button-white" href={inquiryHref}>Request a free homepage concept <span>↗</span></a>
+          <a className="button button-white" href={inquiryHref}>Request a free homepage concept <span className="clean-arrow" aria-hidden="true" /></a>
           <a className="email-link" href="mailto:contact@tnatco.com">contact@tnatco.com</a>
         </div>
       </section>

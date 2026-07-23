@@ -62,12 +62,39 @@ export default function AboutPage() {
         </div>
       </section>
 
+      <section className="leadership section-shell">
+        <div className="leadership-label">
+          <p className="section-tag">Meet the leadership</p>
+          <span className="story-number">02 / THE TEAM</span>
+        </div>
+        <article className="leadership-profile">
+          <figure className="leadership-portrait">
+            <img src="/assets/aj-stratton.jpg" alt="AJ Stratton, Vice President of TNAT Co." />
+            <figcaption><span>Vice President</span><strong>AJ Stratton</strong></figcaption>
+          </figure>
+          <div className="leadership-copy">
+            <p className="leadership-kicker">Marketing · Strategy · Growth</p>
+            <h2>Marketing perspective.<br /><em>Local-business focus.</em></h2>
+            <p>AJ Stratton serves as Vice President of TNAT Co., bringing a marketing-focused perspective to client growth and brand strategy. He is pursuing a degree in Marketing at the University of Central Florida and has gained professional experience with The Preiss Company.</p>
+            <p>Based in Florida, AJ helps TNAT Co. understand what local business owners need to communicate clearly, earn trust online and turn customer attention into real conversations.</p>
+            <div className="leadership-credentials">
+              <span>University of Central Florida</span>
+              <span>Marketing</span>
+              <span>Florida</span>
+            </div>
+            <a className="leadership-link" href="https://www.linkedin.com/in/aj-stratton" target="_blank" rel="noreferrer">
+              View AJ on LinkedIn <span className="clean-arrow" aria-hidden="true" />
+            </a>
+          </div>
+        </article>
+      </section>
+
       <section className="mission">
         <div className="mission-grid" aria-hidden="true" />
         <div className="mission-inner section-shell">
           <div className="mission-heading">
             <p className="section-tag light">Our mission</p>
-            <span>02 / WHY WE EXIST</span>
+            <span>03 / WHY WE EXIST</span>
           </div>
           <div className="mission-layout">
             <h2>We don’t just build websites.<br /><em>We build confidence.</em></h2>
@@ -87,7 +114,7 @@ export default function AboutPage() {
         <div className="final-copy">
           <p>READY TO BUILD SOMETHING PEOPLE TRUST?</p>
           <h2>Let’s make your business impossible to overlook.</h2>
-          <a className="button button-white" href={inquiryHref}>Request a free homepage concept <span>↗</span></a>
+          <a className="button button-white" href={inquiryHref}>Request a free homepage concept <span className="clean-arrow" aria-hidden="true" /></a>
           <a className="email-link" href="mailto:contact@tnatco.com">contact@tnatco.com</a>
         </div>
       </section>

@@ -112,8 +112,8 @@ export default function PrivacyPage() {
             <h2>Contact TNAT Co.</h2>
             <p>For privacy questions or requests, contact us using either option below.</p>
             <div>
-              <a href="mailto:contact@tnatco.com">contact@tnatco.com ↗</a>
-              <a href="tel:+17724867605">(772) 486-7605 ↗</a>
+              <a href="mailto:contact@tnatco.com">contact@tnatco.com <span className="clean-arrow" aria-hidden="true" /></a>
+              <a href="tel:+17724867605">(772) 486-7605 <span className="clean-arrow" aria-hidden="true" /></a>
             </div>
           </section>
         </div>

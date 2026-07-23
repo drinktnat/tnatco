@@ -171,7 +171,7 @@ export default function ServiceRequestForm() {
       <div className="form-submit-row">
         <button type="submit" disabled={status === "sending"}>
           {status === "sending" ? "Sending request…" : "Send service request"}
-          <span aria-hidden="true">↗</span>
+          <span className="clean-arrow" aria-hidden="true" />
         </button>
         <p>Securely delivered to TNAT Co. We do not sell your information.</p>
       </div>
