@@ -1,5 +1,5 @@
 const inquiryHref =
-  "mailto:contact@tnatco.com?subject=Free%20homepage%20concept&body=Business%20name%3A%0AWebsite%20or%20social%20link%3A%0AWhat%20I%20want%20the%20website%20to%20help%20with%3A";
+  "/contact?service=Free%20homepage%20concept#request";
 
 export default function AboutPage() {
   return (

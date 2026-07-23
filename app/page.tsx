@@ -88,7 +88,7 @@ const faqs = [
 ];
 
 const inquiryHref =
-  "mailto:contact@tnatco.com?subject=Free%20homepage%20concept&body=Business%20name%3A%0AWebsite%20or%20social%20link%3A%0AWhat%20I%20want%20the%20website%20to%20help%20with%3A";
+  "/contact?service=Free%20homepage%20concept#request";
 
 export default function Home() {
   return (
@@ -128,40 +128,51 @@ export default function Home() {
           <p className="hero-note">No pressure. We show you what your business could look like first.</p>
         </div>
 
-        <div className="hero-showcase" aria-label="Example of a TNAT Co. customer journey">
-          <div className="showcase-glow" aria-hidden="true" />
-          <div className="showcase-topline">
-            <span>From search to customer</span>
-            <strong>01 → 02 → 03</strong>
-          </div>
-          <div className="journey-pill" aria-hidden="true">
-            <span>Found</span><i>→</i><span>Trusted</span><i>→</i><span>Contacted</span>
-          </div>
-          <div className="search-card">
-            <span className="search-icon">⌕</span>
-            <div><small>LOCAL SEARCH</small><strong>Best service near me</strong></div>
-            <span className="search-arrow">↗</span>
-          </div>
-          <div className="website-stack">
-            <div className="stack-sheet stack-sheet-one" aria-hidden="true" />
-            <div className="stack-sheet stack-sheet-two" aria-hidden="true" />
-            <div className="website-card">
-              <div className="browser-bar"><i /><i /><i /><span>yourbusiness.com</span></div>
-              <div className="website-preview">
-                <small>LOCAL EXPERTS · TRUSTED WORK</small>
-                <strong>Clear service.<br />Clear next step.</strong>
-                <span>REQUEST A QUOTE →</span>
-              </div>
+        <div className="hero-showcase" aria-label="TNAT Co. online growth system">
+          <div className="system-shell">
+            <div className="system-topbar">
+              <div><span className="system-mark">T</span><strong>TNAT GROWTH SYSTEM</strong></div>
+              <span className="system-live"><i /> LIVE</span>
+            </div>
+
+            <div className="system-headline">
+              <p>ONE CLEAR CUSTOMER JOURNEY</p>
+              <h2>From local search<br />to <em>new inquiry.</em></h2>
+            </div>
+
+            <div className="system-flow" aria-hidden="true">
+              <article>
+                <span>01</span>
+                <div><small>VISIBILITY</small><strong>Get found</strong></div>
+                <i>↗</i>
+              </article>
+              <article>
+                <span>02</span>
+                <div><small>CREDIBILITY</small><strong>Earn trust</strong></div>
+                <i>↗</i>
+              </article>
+              <article className="flow-active">
+                <span>03</span>
+                <div><small>CONVERSION</small><strong>Win the call</strong></div>
+                <i>✓</i>
+              </article>
+            </div>
+
+            <div className="system-result">
+              <div className="result-signal" aria-hidden="true"><i /><i /><i /></div>
+              <div><small>NEW SERVICE REQUEST</small><strong>A customer is ready to talk.</strong></div>
+              <span>JUST NOW</span>
+            </div>
+
+            <div className="system-footer">
+              <span><i /> MODERN WEBSITE</span>
+              <span><i /> LOCAL SEARCH</span>
+              <span><i /> SIMPLE LEAD FLOW</span>
             </div>
           </div>
-          <div className="lead-card">
-            <span className="lead-check"><i />✓</span>
-            <div><small>NEW LEAD</small><strong>Quote request received</strong></div>
-            <span>Now</span>
-          </div>
-          <div className="choice-stamp" aria-hidden="true"><small>THE RESULT</small><strong>Chosen.</strong></div>
-          <div className="orbit orbit-one" />
-          <div className="orbit orbit-two" />
+          <div className="system-orbit orbit-a" aria-hidden="true" />
+          <div className="system-orbit orbit-b" aria-hidden="true" />
+          <div className="system-glow" aria-hidden="true" />
         </div>
       </section>
 
@@ -269,7 +280,7 @@ export default function Home() {
               <ul>
                 {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
-              <a href={inquiryHref}>Choose {plan.name} <span>↗</span></a>
+              <a href={`/contact?service=${encodeURIComponent(`${plan.name} package`)}#request`}>Choose {plan.name} <span>↗</span></a>
             </article>
           ))}
         </div>

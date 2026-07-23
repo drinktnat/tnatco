@@ -1,5 +1,6 @@
-const emailHref =
-  "mailto:contact@tnatco.com?subject=Website%20inquiry&body=Business%20name%3A%0ACurrent%20website%20or%20social%20link%3A%0AWhat%20I%20want%20help%20with%3A";
+import ServiceRequestForm from "./ServiceRequestForm";
+
+const emailHref = "mailto:contact@tnatco.com";
 
 export default function ContactPage() {
   return (
@@ -29,8 +30,22 @@ export default function ContactPage() {
         <div className="contact-intro section-shell">
           <p className="kicker"><span /> Let’s talk about your business</p>
           <h1>Ready to turn more searches into <em>customers?</em></h1>
-          <p>Tell us where your business is today and what you want the website to accomplish. We’ll help you choose a clear next step.</p>
+          <p>Tell us where your business is today and what you want the website to accomplish. Your request stays on this page and goes directly to TNAT Co.</p>
         </div>
+      </section>
+
+      <section className="request-section section-shell" id="request">
+        <aside className="request-intro">
+          <p className="section-tag">Request a service</p>
+          <h2>Start with a few clear details.</h2>
+          <p>Choose what you’re interested in and tell us about the business. We’ll review everything before reaching out.</p>
+          <div className="request-steps">
+            <div><span>01</span><strong>Send your request</strong><p>Share the service, business and goal.</p></div>
+            <div><span>02</span><strong>We review it</strong><p>TNAT Co. prepares the best next step.</p></div>
+            <div><span>03</span><strong>We contact you</strong><p>No pressure and no confusing sales process.</p></div>
+          </div>
+        </aside>
+        <ServiceRequestForm />
       </section>
 
       <section className="contact-details section-shell">
@@ -68,7 +83,7 @@ export default function ContactPage() {
             <span>02</span><p>Your current website or social media, if you have one</p>
             <span>03</span><p>What you want customers to do: call, book, visit or request a quote</p>
           </div>
-          <a className="button button-white" href={emailHref}>Start the conversation <span>↗</span></a>
+          <a className="button button-white" href="#request">Start your request <span>↗</span></a>
         </div>
       </section>
 

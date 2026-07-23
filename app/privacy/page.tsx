@@ -71,13 +71,13 @@ export default function PrivacyPage() {
           <section id="sharing">
             <span>04</span>
             <h2>When information may be shared</h2>
-            <p>We do not sell your personal information. We may share information with service providers that help us operate our website, email and business systems; when required by law or needed to protect rights and safety; or as part of a business transfer. Providers receive only the access reasonably needed to perform their services.</p>
+            <p>We do not sell your personal information. Service-request forms are delivered through FormSubmit, a form-delivery provider that processes the information you enter so it can reach TNAT Co. We may also share information with providers that help us operate our website, email and business systems; when required by law or needed to protect rights and safety; or as part of a business transfer. Providers receive only the access reasonably needed to perform their services.</p>
           </section>
 
           <section id="retention">
             <span>05</span>
             <h2>How long we keep information</h2>
-            <p>We retain information only as long as reasonably necessary for the purposes described in this policy, including responding to you, providing services, maintaining business and tax records, resolving disputes and meeting legal obligations. When information is no longer needed, we take reasonable steps to delete or securely dispose of it.</p>
+            <p>We retain information only as long as reasonably necessary for the purposes described in this policy, including responding to you, providing services, maintaining business and tax records, resolving disputes and meeting legal obligations. Our form-delivery provider may temporarily retain submissions to complete delivery and recovery. When information is no longer needed, we take reasonable steps to delete or securely dispose of it.</p>
           </section>
 
           <section id="security">
