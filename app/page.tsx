@@ -26,8 +26,8 @@ const services = [
 const packages = [
   {
     name: "Basic",
-    price: "$499",
-    cadence: "+ $99/year hosting",
+    price: "$599",
+    cadence: "+ $149/year hosting",
     description: "For a business that simply needs to look legitimate online.",
     features: [
       "1–3 page custom website",
@@ -40,8 +40,8 @@ const packages = [
   },
   {
     name: "Professional",
-    price: "$749",
-    cadence: "+ $99/month",
+    price: "$899",
+    cadence: "+ $129/month",
     description: "For an owner who wants the website handled after launch.",
     featured: true,
     features: [
@@ -56,8 +56,8 @@ const packages = [
   },
   {
     name: "Premium",
-    price: "$1,199",
-    cadence: "+ $179/month",
+    price: "$1,499",
+    cadence: "+ $199/month",
     description: "The complete visual and lead-generation experience.",
     features: [
       "5–7 page custom website",
@@ -270,7 +270,10 @@ export default function Home() {
               <ul>
                 {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
-              <a href={`/contact?service=${encodeURIComponent(`${plan.name} website`)}#request`}>Choose {plan.name} <span>↗</span></a>
+              <a href={`/contact?service=${encodeURIComponent(`${plan.name} website`)}#request`}>
+                Choose {plan.name}
+                <span className="package-action-arrow" aria-hidden="true" />
+              </a>
             </article>
           ))}
         </div>

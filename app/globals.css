@@ -196,12 +196,18 @@ nav a[aria-current="page"] { border-color: var(--blue); }
 .featured .cadence { color: var(--blue-soft); }
 .package-card ul { flex: 1; margin: 0; padding: 26px 0 34px; list-style: none; border-top: 1px solid var(--line); }
 .featured ul { border-color: rgba(255,255,255,.2); }
-.package-card li { padding: 8px 0 8px 20px; position: relative; color: #4f4f4d; font-size: 13px; line-height: 1.45; }
+.package-card li { padding: 8px 0 8px 27px; position: relative; color: #4f4f4d; font-size: 13px; line-height: 1.45; }
 .featured li { color: rgba(255,255,255,.7); }
-.package-card li::before { content: "↗"; position: absolute; left: 0; color: var(--blue); }
+.package-card li::before { content: ""; width: 15px; height: 15px; position: absolute; left: 0; top: 10px; border: 1px solid var(--blue); border-radius: 50%; }
+.package-card li::after { content: ""; width: 5px; height: 3px; position: absolute; left: 5px; top: 15px; border-left: 1.5px solid var(--blue); border-bottom: 1.5px solid var(--blue); transform: rotate(-45deg); }
+.featured li::before { border-color: var(--blue-soft); }
+.featured li::after { border-color: var(--blue-soft); }
 .package-card > a { min-height: 50px; padding: 0 15px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--black); font-size: 10px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .package-card.featured > a { border-color: white; }
 .package-card > a:hover { background: var(--blue); border-color: var(--blue); color: white; }
+.package-action-arrow { width: 28px; height: 28px; position: relative; display: block; border: 1px solid currentColor; border-radius: 50%; }
+.package-action-arrow::before { content: ""; width: 10px; height: 1px; position: absolute; left: 7px; top: 13px; background: currentColor; }
+.package-action-arrow::after { content: ""; width: 5px; height: 5px; position: absolute; right: 7px; top: 10px; border-top: 1px solid currentColor; border-right: 1px solid currentColor; transform: rotate(45deg); }
 .package-add-on { margin-top: 34px; padding: 26px 30px; display: grid; grid-template-columns: .8fr 1.4fr auto; align-items: center; gap: 30px; border: 1px solid var(--blue); background: #f6f8ff; }
 .package-add-on > div { display: flex; flex-direction: column; gap: 6px; }
 .package-add-on span { color: var(--blue); font-size: 8px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; }
