@@ -56,7 +56,7 @@ export default function MobileNav() {
               <a href={href} key={label} onClick={() => setOpen(false)}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{label}</strong>
-                <i aria-hidden="true">↗</i>
+                <i className="mobile-link-arrow" aria-hidden="true" />
               </a>
             ))}
           </nav>

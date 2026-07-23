@@ -45,7 +45,12 @@ nav a[aria-current="page"] { border-color: var(--blue); }
 .site-header .mobile-menu-panel nav a:hover { border-color: var(--blue); color: var(--blue); }
 .mobile-menu-panel nav a span { color: var(--blue); font-size: 8px; font-weight: 800; }
 .mobile-menu-panel nav a strong { font-size: 27px; letter-spacing: -.045em; text-transform: none; }
-.mobile-menu-panel nav a i { font-size: 20px; font-style: normal; font-weight: 400; }
+.mobile-link-arrow { width: 40px; height: 40px; position: relative; display: block; border: 1px solid #c8c8c4; border-radius: 50%; transition: background .2s ease, border-color .2s ease; }
+.mobile-link-arrow::before { content: ""; width: 14px; height: 1px; position: absolute; left: 11px; top: 19px; background: var(--black); transition: background .2s ease; }
+.mobile-link-arrow::after { content: ""; width: 7px; height: 7px; position: absolute; right: 11px; top: 15px; border-top: 1px solid var(--black); border-right: 1px solid var(--black); transform: rotate(45deg); transition: border-color .2s ease; }
+.site-header .mobile-menu-panel nav a:hover .mobile-link-arrow { border-color: var(--blue); background: var(--blue); }
+.site-header .mobile-menu-panel nav a:hover .mobile-link-arrow::before { background: white; }
+.site-header .mobile-menu-panel nav a:hover .mobile-link-arrow::after { border-color: white; }
 .mobile-menu-contact { padding-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; }
 .mobile-menu-contact a { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
 
