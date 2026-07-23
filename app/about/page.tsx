@@ -36,6 +36,7 @@ export default function AboutPage() {
           <div className="about-credentials" aria-label="Founder background">
             <span>Division I athlete</span>
             <span>Hofstra University</span>
+            <span>USILA Scholar All-American</span>
             <span>South Florida</span>
           </div>
         </div>
@@ -58,7 +59,11 @@ export default function AboutPage() {
           <div className="founder-copy">
             <p>I’m Trevor Natalie, founder of TNAT Co. I’m a Division I athlete who attended Hofstra University on Long Island, New York. Competing at that level taught me discipline, preparation and the value of doing the small things correctly—lessons I bring to every client project.</p>
             <p>I started TNAT Co. to help business owners grow by giving them an online presence that reflects the quality of the work they already do. My goal is to build the strongest website possible for every client: something modern, easy to understand and designed to help the business get recognized.</p>
+            <p className="founder-proof">My background also includes experience with Marine Connex, recognition as a USILA Scholar All-American and volunteer fundraising for the Lustgarten Foundation, where I helped raise more than $21,000 for pancreatic cancer research in honor of my father. Those experiences shaped how I lead TNAT Co.: with discipline, empathy and follow-through.</p>
           </div>
+          <a className="founder-link" href="https://www.linkedin.com/in/trevor-natalie-7a0882299" target="_blank" rel="noreferrer">
+            View Trevor on LinkedIn <span className="clean-arrow" aria-hidden="true" />
+          </a>
         </div>
       </section>
 

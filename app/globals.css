@@ -331,6 +331,8 @@ details > p { margin: -5px 40px 30px 59px; color: var(--muted); font-size: 14px;
 .founder-bio h2 em { color: var(--blue); font-style: normal; }
 .founder-copy { margin-top: 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 38px; border-top: 1px solid var(--line); }
 .founder-copy p { margin: 0; padding-top: 28px; color: var(--muted); font-size: 15px; line-height: 1.8; }
+.founder-copy .founder-proof { grid-column: 1 / -1; margin-top: 2px; padding: 28px 0 0; border-top: 1px solid var(--line); color: #383836; }
+.founder-link { width: fit-content; margin-top: 34px; padding-bottom: 6px; display: inline-flex; align-items: center; gap: 12px; border-bottom: 1px solid #8b8b87; color: var(--ink); font-size: 9px; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
 
 .leadership { padding: 0 0 135px; display: grid; grid-template-columns: .45fr 1.55fr; gap: 70px; }
 .leadership-label { padding-top: 8px; }
@@ -581,6 +583,7 @@ details > p { margin: -5px 40px 30px 59px; color: var(--muted); font-size: 14px;
   .founder-story { padding: 90px 0; }
   .founder-bio h2, .mission h2 { font-size: 45px; }
   .founder-copy { grid-template-columns: 1fr; gap: 0; }
+  .founder-copy .founder-proof { grid-column: 1; margin-top: 28px; }
   .leadership { padding-bottom: 90px; }
   .leadership-profile { min-height: auto; grid-template-columns: 1fr; box-shadow: 10px 10px 0 #e4e8f5; }
   .leadership-portrait { min-height: 560px; }
