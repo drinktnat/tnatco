@@ -128,51 +128,38 @@ export default function Home() {
           <p className="hero-note">No pressure. We show you what your business could look like first.</p>
         </div>
 
-        <div className="hero-showcase" aria-label="TNAT Co. online growth system">
-          <div className="system-shell">
-            <div className="system-topbar">
-              <div><span className="system-mark">T</span><strong>TNAT GROWTH SYSTEM</strong></div>
-              <span className="system-live"><i /> LIVE</span>
+        <div className="hero-showcase" aria-label="TNAT Co. brand visibility concept">
+          <div className="brand-stage">
+            <div className="stage-topline">
+              <span>TNAT / DIGITAL PRESENCE</span>
+              <strong>BUILT FOR LOCAL BUSINESS</strong>
             </div>
 
-            <div className="system-headline">
-              <p>ONE CLEAR CUSTOMER JOURNEY</p>
-              <h2>From local search<br />to <em>new inquiry.</em></h2>
+            <div className="stage-core" aria-hidden="true">
+              <div className="stage-ring stage-ring-one" />
+              <div className="stage-ring stage-ring-two" />
+              <div className="stage-crosshair crosshair-horizontal" />
+              <div className="stage-crosshair crosshair-vertical" />
+              <div className="stage-mark"><img src="/assets/tnat-co-monogram.png" alt="" /></div>
+              <span className="stage-tag tag-found"><b>01</b> FOUND</span>
+              <span className="stage-tag tag-trusted"><b>02</b> TRUSTED</span>
+              <span className="stage-tag tag-chosen"><b>03</b> CHOSEN</span>
             </div>
 
-            <div className="system-flow" aria-hidden="true">
-              <article>
-                <span>01</span>
-                <div><small>VISIBILITY</small><strong>Get found</strong></div>
-                <i>↗</i>
-              </article>
-              <article>
-                <span>02</span>
-                <div><small>CREDIBILITY</small><strong>Earn trust</strong></div>
-                <i>↗</i>
-              </article>
-              <article className="flow-active">
-                <span>03</span>
-                <div><small>CONVERSION</small><strong>Win the call</strong></div>
-                <i>✓</i>
-              </article>
+            <div className="stage-message">
+              <p>THE ONLINE PRESENCE YOUR WORK DESERVES</p>
+              <h2>Built to be seen.<br /><em>Designed to be chosen.</em></h2>
             </div>
 
-            <div className="system-result">
-              <div className="result-signal" aria-hidden="true"><i /><i /><i /></div>
-              <div><small>NEW SERVICE REQUEST</small><strong>A customer is ready to talk.</strong></div>
-              <span>JUST NOW</span>
-            </div>
-
-            <div className="system-footer">
-              <span><i /> MODERN WEBSITE</span>
-              <span><i /> LOCAL SEARCH</span>
-              <span><i /> SIMPLE LEAD FLOW</span>
+            <div className="stage-footer">
+              <span>WEB</span><i />
+              <span>SEARCH</span><i />
+              <span>CONTENT</span><i />
+              <span>LEADS</span>
             </div>
           </div>
-          <div className="system-orbit orbit-a" aria-hidden="true" />
-          <div className="system-orbit orbit-b" aria-hidden="true" />
-          <div className="system-glow" aria-hidden="true" />
+          <div className="stage-glow" aria-hidden="true" />
+          <div className="stage-number" aria-hidden="true">01</div>
         </div>
       </section>
 
@@ -280,7 +267,7 @@ export default function Home() {
               <ul>
                 {plan.features.map((feature) => <li key={feature}>{feature}</li>)}
               </ul>
-              <a href={`/contact?service=${encodeURIComponent(`${plan.name} package`)}#request`}>Choose {plan.name} <span>↗</span></a>
+              <a href={`/contact?service=${encodeURIComponent(`${plan.name} website`)}#request`}>Choose {plan.name} <span>↗</span></a>
             </article>
           ))}
         </div>

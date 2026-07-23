@@ -3,20 +3,18 @@
 import { FormEvent, useEffect, useState } from "react";
 
 const serviceOptions = [
-  "Free homepage concept",
-  "Basic package",
-  "Professional package",
-  "Premium package",
-  "Professional photo shoot",
-  "Photo and video content",
-  "Local SEO and Google Business",
-  "Something else",
+  "Basic website",
+  "Professional website",
+  "Professional website + photo shoot",
+  "Premium website",
+  "Premium website + photo shoot",
+  "Photo + video content only",
 ];
 
 type FormStatus = "idle" | "sending" | "success" | "error";
 
 export default function ServiceRequestForm() {
-  const [selectedService, setSelectedService] = useState("Free homepage concept");
+  const [selectedService, setSelectedService] = useState("Basic website");
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -63,7 +61,7 @@ export default function ServiceRequestForm() {
 
       setStatus("success");
       form.reset();
-      setSelectedService("Free homepage concept");
+      setSelectedService("Basic website");
     } catch (error) {
       setStatus("error");
       setErrorMessage(error instanceof Error ? error.message : "Something went wrong. Please try again.");
@@ -135,11 +133,11 @@ export default function ServiceRequestForm() {
         </label>
         <label>
           <span>When would you like to start?</span>
-          <select name="Desired timeline" defaultValue="As soon as possible">
-            <option>As soon as possible</option>
-            <option>Within the next month</option>
-            <option>Within 2–3 months</option>
-            <option>Just exploring options</option>
+          <select name="Desired timeline" defaultValue="Within 1 week">
+            <option>Within 1 week</option>
+            <option>Within 2 weeks</option>
+            <option>Within 1 month</option>
+            <option>Still exploring options</option>
           </select>
         </label>
         <label className="form-wide">
@@ -147,6 +145,16 @@ export default function ServiceRequestForm() {
           <textarea name="Project details" required rows={6} placeholder="Tell us what your business does, what you need, and what you want customers to do on your website." />
         </label>
       </div>
+
+      <label className="video-option">
+        <input type="checkbox" name="Include video content" value="Yes — discuss short-form or long-form video" />
+        <span className="video-option-check" aria-hidden="true">✓</span>
+        <span>
+          <strong>Include video content in my quote</strong>
+          <small>Select this if you may want short-form or long-form video. We’ll discuss the style, length and pricing with you.</small>
+        </span>
+        <em>OPTIONAL</em>
+      </label>
 
       <label className="form-consent">
         <input type="checkbox" name="Permission to contact" value="Yes" required />
