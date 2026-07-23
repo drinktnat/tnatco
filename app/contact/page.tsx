@@ -1,4 +1,5 @@
 import ServiceRequestForm from "./ServiceRequestForm";
+import MobileNav from "../components/MobileNav";
 
 const emailHref = "mailto:contact@tnatco.com";
 
@@ -24,6 +25,7 @@ export default function ContactPage() {
           <a href="/contact" aria-current="page">Contact</a>
         </nav>
         <a className="header-cta" href="tel:+17724867605">Call now</a>
+        <MobileNav />
       </header>
 
       <section className="contact-hero">

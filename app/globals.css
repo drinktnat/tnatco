@@ -30,6 +30,24 @@ nav a { padding: 12px 0 10px; border-bottom: 1px solid transparent; }
 nav a:hover { border-color: var(--black); }
 nav a[aria-current="page"] { border-color: var(--blue); }
 .header-cta { justify-self: end; min-height: 42px; padding: 0 18px; display: inline-flex; align-items: center; background: var(--black); color: white; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; }
+.mobile-nav { display: none; justify-self: end; }
+.mobile-menu-button { width: 44px; height: 44px; padding: 0; position: relative; z-index: 62; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; border: 1px solid var(--black); background: white; cursor: pointer; }
+.mobile-menu-button span { width: 19px; height: 2px; display: block; background: var(--black); transition: transform .2s ease, opacity .2s ease; }
+.mobile-nav.is-open .mobile-menu-button span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.mobile-nav.is-open .mobile-menu-button span:nth-child(2) { opacity: 0; }
+.mobile-nav.is-open .mobile-menu-button span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+.mobile-menu-panel { position: fixed; z-index: 60; left: 0; right: 0; top: 118px; height: calc(100dvh - 118px); padding: 44px 6vw 34px; overflow-y: auto; background: white; border-top: 1px solid var(--line); }
+.mobile-menu-heading { padding-bottom: 28px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid var(--line); }
+.mobile-menu-heading span { color: var(--blue); font-size: 8px; font-weight: 800; letter-spacing: .16em; }
+.mobile-menu-heading strong { font-size: 20px; letter-spacing: -.03em; }
+.site-header .mobile-menu-panel nav { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+.site-header .mobile-menu-panel nav a { min-height: 76px; padding: 0; display: grid; grid-template-columns: 42px 1fr auto; align-items: center; gap: 15px; border-bottom: 1px solid var(--line); }
+.site-header .mobile-menu-panel nav a:hover { border-color: var(--blue); color: var(--blue); }
+.mobile-menu-panel nav a span { color: var(--blue); font-size: 8px; font-weight: 800; }
+.mobile-menu-panel nav a strong { font-size: 27px; letter-spacing: -.045em; text-transform: none; }
+.mobile-menu-panel nav a i { font-size: 20px; font-style: normal; font-weight: 400; }
+.mobile-menu-contact { padding-top: 28px; display: flex; flex-wrap: wrap; gap: 10px 24px; }
+.mobile-menu-contact a { color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; }
 
 .hero { min-height: 760px; display: grid; grid-template-columns: 1.05fr .95fr; border-bottom: 1px solid var(--line); overflow: hidden; }
 .hero-copy { padding: 105px max(6vw, calc((100vw - 1240px)/2)) 90px; padding-right: 7vw; display: flex; flex-direction: column; justify-content: center; }
@@ -413,8 +431,10 @@ details > p { margin: -5px 40px 30px 59px; color: var(--muted); font-size: 14px;
 }
 
 @media (max-width: 1050px) {
-  .site-header { grid-template-columns: 1fr auto; }
+  .site-header { grid-template-columns: 1fr auto auto; gap: 10px; }
   .site-header nav { display: none; }
+  .mobile-nav { display: block; }
+  .site-header .mobile-menu-panel nav { display: flex; }
   .hero { grid-template-columns: 1fr; }
   .hero-copy { min-height: 700px; padding-left: 7vw; }
   .hero-showcase { min-height: 680px; }
@@ -449,7 +469,11 @@ details > p { margin: -5px 40px 30px 59px; color: var(--muted); font-size: 14px;
   .site-header { grid-template-columns: minmax(165px, 1fr) auto; }
   .brand { width: 170px; height: 66px; }
   .brand img { width: 170px; }
-  .header-cta { min-height: 38px; padding: 0 12px; font-size: 8px; }
+  .header-cta { display: none; }
+  .mobile-menu-button { width: 40px; height: 40px; }
+  .mobile-menu-panel { top: 108px; height: calc(100dvh - 108px); padding: 32px 6vw 28px; }
+  .site-header .mobile-menu-panel nav a { min-height: 68px; }
+  .mobile-menu-panel nav a strong { font-size: 24px; }
   .hero-copy { min-height: 680px; padding: 80px 6vw 70px; }
   .hero h1 { font-size: clamp(54px, 16vw, 76px); }
   .hero-lede { font-size: 15px; }

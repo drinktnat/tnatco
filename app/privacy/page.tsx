@@ -1,3 +1,5 @@
+import MobileNav from "../components/MobileNav";
+
 export default function PrivacyPage() {
   return (
     <main id="top" className="privacy-page">
@@ -20,6 +22,7 @@ export default function PrivacyPage() {
           <a href="/contact">Contact</a>
         </nav>
         <a className="header-cta" href="/contact">Contact us</a>
+        <MobileNav />
       </header>
 
       <section className="privacy-hero">

@@ -1,3 +1,5 @@
+import MobileNav from "../components/MobileNav";
+
 const inquiryHref =
   "/contact?service=Free%20homepage%20concept#request";
 
@@ -23,6 +25,7 @@ export default function AboutPage() {
           <a href="/contact">Contact</a>
         </nav>
         <a className="header-cta" href="/contact">Contact us</a>
+        <MobileNav />
       </header>
 
       <section className="about-hero">

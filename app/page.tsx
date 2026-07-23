@@ -1,3 +1,5 @@
+import MobileNav from "./components/MobileNav";
+
 const services = [
   {
     number: "01",
@@ -112,6 +114,7 @@ export default function Home() {
           <a href="/contact">Contact</a>
         </nav>
         <a className="header-cta" href="/contact">Contact us</a>
+        <MobileNav />
       </header>
 
       <section className="hero">
