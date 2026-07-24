@@ -65,7 +65,7 @@ export default function ContactPage() {
           <a className="contact-option" href={emailHref}>
             <span>02 / EMAIL</span>
             <strong>contact@tnatco.com</strong>
-            <p>Send your business name, current online presence and what you want help with.</p>
+            <p>Have another question or concern? Email us directly and we’ll be happy to help.</p>
             <i className="clean-arrow" aria-hidden="true" />
           </a>
         </div>

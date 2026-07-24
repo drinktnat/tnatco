@@ -27,7 +27,7 @@ const packages = [
   {
     name: "Basic",
     price: "$599",
-    cadence: "+ $149/year hosting",
+    cadence: "+ $199/year hosting",
     description: "For a business that simply needs to look legitimate online.",
     features: [
       "1–3 page custom website",
@@ -41,7 +41,7 @@ const packages = [
   {
     name: "Professional",
     price: "$899",
-    cadence: "+ $129/month",
+    cadence: "+ $179/month",
     description: "For an owner who wants the website handled after launch.",
     featured: true,
     features: [
@@ -57,7 +57,7 @@ const packages = [
   {
     name: "Premium",
     price: "$1,499",
-    cadence: "+ $199/month",
+    cadence: "+ $299/month",
     description: "The complete visual and lead-generation experience.",
     features: [
       "5–7 page custom website",

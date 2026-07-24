@@ -8,7 +8,6 @@ const serviceOptions = [
   "Professional website + photo shoot",
   "Premium website",
   "Premium website + photo shoot",
-  "Photo + video content only",
 ];
 
 type FormStatus = "idle" | "sending" | "success" | "error";
@@ -128,8 +127,15 @@ export default function ServiceRequestForm() {
           </select>
         </label>
         <label>
-          <span>Current website or social page</span>
-          <input type="url" name="Current website or social page" inputMode="url" placeholder="https://" />
+          <span>Current website or social page <em className="optional-label">— optional</em></span>
+          <input
+            type="text"
+            name="Current website or social page"
+            inputMode="url"
+            autoComplete="url"
+            placeholder="example.com or instagram.com/yourbusiness"
+          />
+          <small className="form-help">Paste a link or type the address without “https://”. Leave this blank if you do not have one yet.</small>
         </label>
         <label>
           <span>When would you like to start?</span>
