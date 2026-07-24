@@ -6,7 +6,7 @@ This repository contains the TNAT Co. company website.
 
 ## Live website
 
-[Visit TNAT Co.](https://scallywags-boatworks-concept.tnat05.chatgpt.site)
+[Visit TNAT Co.](https://tnatco.com)
 
 ## What the website includes
 
