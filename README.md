@@ -25,6 +25,10 @@ Wholesale uses the existing FormSubmit destination contact@tnatco.com. Verify ma
 - https://developers.kit.com/api-reference/subscribers/create-a-subscriber
 - https://developers.kit.com/api-reference/forms/add-subscriber-to-form-by-email-address
 - https://www.premierprotein.com/products/chocolate-protein-shake
-- https://rysesupps.com/products/clear-whey-rtd-protein
+- https://fairlife.com/core-power/chocolate-protein-shake/
 
 Competitor labels checked September 22, 2026. Bottle image is an AI-generated packaging concept.
+
+## Founder and positioning
+Trevor Natalie is the founder and owner. Business location: Stuart, Florida. Founder photo and Hofstra game photo are user-supplied. LinkedIn link recovered from the original site.
+Monk fruit dose remains in testing; the previous blended-sweetener dose is not treated as a pure-extract quantity.

@@ -8,9 +8,11 @@ test('all product routes render with no legacy sales offers',async()=>{
  for(const path of ['/','/formula','/process','/about','/wholesale','/contact','/privacy']){
   const response=await worker.fetch(new Request('https://tnatco.com'+path,{headers:{accept:'text/html'}}),env,ctx);
   assert.equal(response.status,200,path);const html=await response.text();
-  assert.match(html,/TNAT/);assert.doesNotMatch(html,/199\/year hosting|Basic website|Look Professional\. Get Found|stevia|Reb M/i);
-  if(path==='/formula'){assert.match(html,/Monk fruit extract/i);assert.match(html,/CONTAINS: MILK/);assert.match(html,/not a final production label/);}
-  if(path==='/'){assert.match(html,/Seven ingredients/);assert.match(html,/Not lab-tested/);assert.match(html,/Packaging concept/);}
+  assert.match(html,/TNAT/);assert.doesNotMatch(html,/199\/year hosting|Basic website|Look Professional\. Get Found|stevia|Reb M|Jupiter|RYSE|Isopure|NSF|NCAA approved|FDA approved/i);
+  if(path==='/formula'){assert.match(html,/Monk fruit extract/i);assert.match(html,/Contains: milk/i);assert.match(html,/not a final production label/);assert.equal((html.match(/<article data-reveal/g)||[]).length,7);assert.match(html,/Amount \/ bottle/);assert.match(html,/In testing/);}
+  if(path==='/about'){assert.match(html,/Founder &amp; owner/);assert.match(html,/trevor-natalie-7a0882299/);assert.match(html,/trevor-natalie-headshot/);assert.match(html,/trevor-hofstra-lacrosse/);}
+  if(path==='/wholesale'){assert.match(html,/Team dietitian/);assert.match(html,/Organization type/);}
+  if(path==='/'){assert.match(html,/Fairlife Core Power/);assert.match(html,/The future of protein shakes/);assert.match(html,/Seven ingredients/);assert.match(html,/Not lab-tested/);assert.match(html,/Packaging concept/);}
  }
 });
 test('unconfigured waitlist is unavailable, never reports a saved signup',async()=>{
