@@ -19,7 +19,7 @@ Set the matching local `.env` keys only for local integration testing. `.env.exa
 Create the form in Kit and configure its incentive/confirmation email and sender before enabling live signups. The integration creates an inactive subscriber, then subscribes that address to the designated form; existing subscribers are not forcibly reactivated. Verify Kit form confirmation settings with an owner-authorized test signup before calling the waitlist live.
 Missing configuration returns 503 with an honest user-visible message; no signup is falsely confirmed.
 
-Wholesale uses the existing FormSubmit destination contact@tnatco.com. Verify mailbox activation and real delivery with an owner-authorized test before relying on it.
+Wholesale uses the existing FormSubmit destination contact@drinktnat.com. Verify mailbox activation and real delivery with an owner-authorized test before relying on it.
 
 ## Sources
 - https://developers.kit.com/api-reference/subscribers/create-a-subscriber

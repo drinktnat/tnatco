@@ -13,7 +13,7 @@ export async function handleWaitlist(request: Request, env: KitEnvironment, send
   const origin=request.headers.get('Origin');
   if (!origin || origin!==new URL(request.url).origin) return reply(403,'Please use the signup form on the TNAT website.');
   if (!request.headers.get('Content-Type')?.startsWith('application/json')) return reply(415,'Please submit the email form again.');
-  if (!configured(env)) return reply(503,'Waitlist signup is opening soon. Your email has not been saved. Please check back or email contact@tnatco.com.');
+  if (!configured(env)) return reply(503,'Waitlist signup is opening soon. Your email has not been saved. Please check back or email contact@drinktnat.com.');
   let data: Record<string,unknown>;
   try {
     const reader=request.body?.getReader();

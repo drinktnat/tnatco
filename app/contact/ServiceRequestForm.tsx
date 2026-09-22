@@ -39,7 +39,7 @@ export default function ServiceRequestForm() {
     const payload = Object.fromEntries(formData.entries());
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/contact@tnatco.com", {
+      const response = await fetch("https://formsubmit.co/ajax/contact@drinktnat.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

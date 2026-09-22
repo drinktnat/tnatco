@@ -62,7 +62,7 @@ export default function MobileNav() {
           </nav>
           <div className="mobile-menu-contact">
             <a href="tel:+17724867605">Call or text: (772) 486-7605</a>
-            <a href="mailto:contact@tnatco.com">contact@tnatco.com</a>
+            <a href="mailto:contact@drinktnat.com">contact@drinktnat.com</a>
           </div>
         </div>
       )}
