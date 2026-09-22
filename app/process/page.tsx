@@ -1,9 +1,9 @@
 import {Header,Footer} from '../components/Brand';
-import {Waitlist,ColdLife} from '../components/Content';
+import {Waitlist,ColdLife,ColdPositioning} from '../components/Content';
 export const metadata={title:'The planned process'};
 export default function Process(){return <><Header/><main id="main">
 <section className="shell page-hero process-hero"><div><p className="eyebrow">The process / In development</p><h1>Made cold.<br/>Kept cold.<br/>Shaken well.</h1><p className="section-description">A creamy chocolate protein shake, from the ingredients to the last sip. We’re developing it for the refrigerator, with a target of 45 days cold. The process and shelf life still need validation.</p><a className="text-link" href="#shake-well">Why the shake matters <span aria-hidden="true">↓</span></a></div><ColdLife/></section>
-<section className="flavor-band"><div className="shell band-inner"><h2>A shake worth shaking.</h2><p className="mono">Seven ingredients<br/>Creamy chocolate is the goal</p></div></section>
+<section className="flavor-band cold-promise"><div className="shell section"><ColdPositioning/></div></section>
 <section className="bone"><div className="shell section process-list"><p className="eyebrow">Our development plan</p>{[
 ['01','Build the shake.','Blend the seven proposed ingredients. Whey isolate supplies the protein, coconut cream brings body, and cocoa makes it chocolate. We’re developing a creamy, drinkable shake with a balanced finish.'],
 ['02','Bring it together.','Homogenize to help disperse the water, protein, cocoa, and coconut cream. Sunflower lecithin helps fat and water mix. Without gums, some settling and natural separation are expected; texture and stability still need testing.'],

@@ -43,3 +43,9 @@
 .bone+.vanilla-section .section{padding-top:105px}
 @media(max-width:650px){.bone+.vanilla-section .section{padding-top:65px}}
 @media(max-width:360px){.header{gap:6px}.header .brand{width:95px}.header .nav-cta{padding:9px 8px;font-size:.7rem}.header .nav-cta span{display:none}.menu-toggle{padding:9px 8px;font-size:.7rem}.header .mobile-panel{padding-inline:16px}.process-hero h1{font-size:3rem}.cold-life strong{font-size:5rem}.cold-life>p{gap:22px}.vanilla-inner h2{font-size:3rem}.formula-hero h1{font-size:2.5rem}}
+
+/* Refrigeration is a deliberate product choice. */
+.cold-promise{border-top:1px solid var(--accent)}.cold-positioning{display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}.cold-positioning h2{font-size:clamp(2.8rem,4.7vw,4.5rem);line-height:1.08;letter-spacing:-.055em}.cold-positioning h2>span{color:var(--chocolate)}.cold-positioning sup{font-family:'IBM Plex Mono',monospace;font-size:1.25rem;vertical-align:super;letter-spacing:0;margin-left:5px}.cold-positioning-copy .section-description:first-child{margin-top:0}.cold-positioning .cold-target{margin-top:24px;max-width:530px}.flavor-band .cold-positioning h2>span{color:#e6c7b2}.flavor-band .cold-positioning .cold-target{color:#e6c7b2}.flavor-band .cold-positioning .section-description{color:var(--bone)}
+@media(max-width:1000px){.cold-positioning{gap:40px}}
+@media(max-width:650px){.cold-positioning{grid-template-columns:1fr;gap:32px}.cold-positioning h2{font-size:2.8rem}.cold-positioning .eyebrow{margin-bottom:24px}}
+@media(max-width:360px){.cold-positioning h2{font-size:2.4rem}}
