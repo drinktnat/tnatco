@@ -1,0 +1,10 @@
+import {Header,Footer} from '../components/Brand';
+import {Waitlist} from '../components/Content';
+export const metadata={title:'The planned process'};
+export default function Process(){return <><Header/><main id="main"><section className="shell page-hero"><p className="eyebrow">The process / In development</p><h1>Made cold.<br />Kept cold.</h1><p className="section-description">Refrigeration is part of the product we’re building. The process below is our development plan, not a validated manufacturing protocol.</p></section><section className="flavor-band"><div className="shell band-inner"><h2>We skipped the shelf.</h2><p className="mono">Designed for refrigeration</p></div></section><section className="bone"><div className="shell section process-list">{[
+['01','Blend.','Combine the seven proposed ingredients. We’re targeting a creamy chocolate shake at a near-neutral pH.'],
+['02','Homogenize.','Develop an even mixture of water, protein, cocoa, and coconut cream. Texture and separation still need testing.'],
+['03','Bottle and seal.','Move into suitable packaging at a licensed production facility. Our co-packing partner has not yet been selected.'],
+['04','Apply pressure.','Evaluate high pressure processing (HPP) as part of a validated food-safety process. Pressure settings, holding times, and product compatibility must be established by qualified specialists.'],
+['05','Keep cold.','Plan for refrigerated storage and distribution. A 45-day shelf life is a development target only; the final date and storage conditions require validation.']
+].map(([n,title,body])=><article key={n}><span className="mono">{n}</span><div><h2>{title}</h2><p>{body}</p></div></article>)}</div></section><section className="shell section two-column"><div><p className="eyebrow">Where we stand</p><h2>The work<br />before the launch.</h2></div><div className="prose"><p>The formula is at the benchtop stage. Production, safety validation, shelf-life studies, and finished-product nutrition testing are still ahead.</p><p>We won’t present a target as a tested result. Join the waitlist to follow the development.</p></div></section><Waitlist/></main><Footer/></>}

@@ -1,0 +1,4 @@
+import {Header,Footer} from '../components/Brand';
+import WholesaleForm from './WholesaleForm';
+export const metadata={title:'Wholesale inquiries'};
+export default function Wholesale(){return <><Header/><main id="main"><section className="shell page-hero"><p className="eyebrow">For gyms & independent retailers</p><h1>Make room<br />in the fridge.</h1><p className="section-description">We’re starting conversations with potential launch partners in South Florida. Tell us about your gym or store.</p></section><section className="bone"><div className="shell section two-column"><div><p className="eyebrow">Register your interest</p><h2>A conversation.<br />No commitment.</h2><p className="section-description">TNAT is in development. Launch dates, wholesale pricing, minimum orders, and delivery terms are not yet confirmed.</p><a className="text-link" href="mailto:contact@tnatco.com">contact@tnatco.com ↗</a></div><WholesaleForm/></div></section></main><Footer/></>}

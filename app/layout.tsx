@@ -1,36 +1,11 @@
-import type { Metadata } from "next";
-import { headers } from "next/headers";
-import SiteMotion from "./components/SiteMotion";
-import "./globals.css";
-
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const imageUrl = `${protocol}://${host}/og-tnat-v2.png`;
-  const title = "TNAT Co. | Look Professional. Get Found. Stay Busy.";
-  const description = "Custom websites, local visibility, professional photography and simple lead systems for owner-operated local businesses.";
-
-  return {
-    title,
-    description,
-    openGraph: { title, description, images: [{ url: imageUrl, width: 1200, height: 630 }] },
-    twitter: { card: "summary_large_image", title, description, images: [imageUrl] },
-    icons: { icon: "/assets/tnat-co-monogram.png" },
-  };
-}
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en">
-      <body>
-        <SiteMotion />
-        {children}
-      </body>
-    </html>
-  );
-}
+import type { Metadata } from 'next';
+import './globals.css';
+export const metadata: Metadata = {
+ metadataBase:new URL('https://tnatco.com'),
+ title:{default:'TNAT Chocolate | Seven ingredients. Nothing else.',template:'%s | TNAT'},
+ description:'A refrigerated chocolate whey isolate shake in development. Seven ingredients, sweetened with monk fruit. Get TNAT launch updates.',
+ openGraph:{title:'TNAT Chocolate',description:'Seven ingredients. Nothing else. A refrigerated whey isolate shake in development.',images:[{url:'https://tnatco.com/og-tnat-v2.png',width:1200,height:630}]},
+ twitter:{card:'summary_large_image',title:'TNAT Chocolate',description:'Seven ingredients. Nothing else.',images:['https://tnatco.com/og-tnat-v2.png']},
+ icons:{icon:'/assets/tnat-co-monogram.png'}
+};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}

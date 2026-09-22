@@ -1,59 +1,30 @@
-# TNAT Co.
+# TNAT Chocolate
 
-TNAT Co. helps local businesses build a modern online presence that earns trust, improves local visibility, and turns website visitors into customer inquiries.
+Pre-launch refrigerated whey isolate shake website for TNAT Co. LLC.
 
-This repository contains the TNAT Co. company website.
+## Product decisions
+- Monk fruit extract only. Seven proposed ingredients.
+- Nutrition is calculated, not lab-tested. Process and shelf life are development targets.
+- No checkout, preorder, certification, or health claims.
 
-## Live website
+## Development
+Use the existing Node 22+ / pnpm dependencies. `pnpm dev`, `pnpm build`, `pnpm test`.
 
-[Visit TNAT Co.](https://tnatco.com)
+## Waitlist activation
+The custom React form calls `/api/waitlist`. The server uses Kit v4; no API keys reach the browser.
+Set production secrets with Sites environment management:
+- `KIT_API_KEY`: a Kit v4 API key (secret)
+- `KIT_FORM_ID`: numeric ID for the launch waitlist form
+Set the matching local `.env` keys only for local integration testing. `.env.example` contains blank values.
+Create the form in Kit and configure its incentive/confirmation email and sender before enabling live signups. The integration creates an inactive subscriber, then subscribes that address to the designated form; existing subscribers are not forcibly reactivated. Verify Kit form confirmation settings with an owner-authorized test signup before calling the waitlist live.
+Missing configuration returns 503 with an honest user-visible message; no signup is falsely confirmed.
 
-## What the website includes
+Wholesale uses the existing FormSubmit destination contact@tnatco.com. Verify mailbox activation and real delivery with an owner-authorized test before relying on it.
 
-- Responsive marketing website for desktop and mobile
-- Service and package information
-- About and contact pages
-- Privacy and website-security information
-- Local-business search and lead-generation messaging
-- Original TNAT Co. branding and photography
+## Sources
+- https://developers.kit.com/api-reference/subscribers/create-a-subscriber
+- https://developers.kit.com/api-reference/forms/add-subscriber-to-form-by-email-address
+- https://www.premierprotein.com/products/chocolate-protein-shake
+- https://rysesupps.com/products/clear-whey-rtd-protein
 
-## Technology
-
-- React 19
-- TypeScript
-- Vinext and Vite
-- Tailwind CSS
-- OpenAI Sites hosting configuration
-
-## Run locally
-
-Requires Node.js 22.13 or newer.
-
-```bash
-npm install
-npm run dev
-```
-
-Then open the local address displayed in the terminal.
-
-## Validate a production build
-
-```bash
-npm run build
-```
-
-## Main routes
-
-- `/` — Home, services, packages, process, and common questions
-- `/about` — Founder story and company mission
-- `/contact` — Contact information and inquiry options
-- `/privacy` — Privacy and website-security information
-
-## Contact
-
-- Email: [contact@tnatco.com](mailto:contact@tnatco.com)
-- Website: [tnatco.com](https://tnatco.com)
-
-## Usage notice
-
-No open-source license has been selected for this repository yet. TNAT Co. branding, photography, written content, and other creative assets may not be reused without permission.
+Competitor labels checked September 22, 2026. Bottle image is an AI-generated packaging concept.
