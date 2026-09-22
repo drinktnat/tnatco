@@ -47,7 +47,7 @@ export default function ServiceRequestForm() {
         },
         body: JSON.stringify({
           ...payload,
-          _subject: `New TNAT Co. service request: ${selectedService}`,
+          _subject: `New Drink TNAT service request: ${selectedService}`,
           _template: "table",
           _url: window.location.href,
         }),
@@ -73,7 +73,7 @@ export default function ServiceRequestForm() {
         <span aria-hidden="true">✓</span>
         <p>REQUEST RECEIVED</p>
         <h2>Thank you. We’ll be in touch shortly.</h2>
-        <p>TNAT Co. will review your information and reach out using your preferred contact method.</p>
+        <p>Drink TNAT will review your information and reach out using your preferred contact method.</p>
         <button type="button" onClick={() => setStatus("idle")}>Send another request</button>
       </div>
     );
@@ -164,7 +164,7 @@ export default function ServiceRequestForm() {
 
       <label className="form-consent">
         <input type="checkbox" name="Permission to contact" value="Yes" required />
-        <span>I agree that TNAT Co. may use this information to respond to my request. *</span>
+        <span>I agree that Drink TNAT may use this information to respond to my request. *</span>
       </label>
 
       <label className="form-honeypot" aria-hidden="true">
@@ -179,7 +179,7 @@ export default function ServiceRequestForm() {
           {status === "sending" ? "Sending request…" : "Send service request"}
           <span className="clean-arrow" aria-hidden="true" />
         </button>
-        <p>Securely delivered to TNAT Co. We do not sell your information.</p>
+        <p>Securely delivered to Drink TNAT. We do not sell your information.</p>
       </div>
     </form>
   );

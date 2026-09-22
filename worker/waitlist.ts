@@ -38,7 +38,7 @@ export async function handleWaitlist(request: Request, env: KitEnvironment, send
   try {
     const created=await send('https://api.kit.com/v4/subscribers',{method:'POST',headers,body:JSON.stringify({email_address:email,state:'inactive'}),signal:AbortSignal.timeout(10000)});
     if(!created.ok)return reply(created.status===429?429:502,'We couldn’t complete your signup. Please try again shortly.');
-    const added=await send(`https://api.kit.com/v4/forms/${env.KIT_FORM_ID}/subscribers`,{method:'POST',headers,body:JSON.stringify({email_address:email,referrer:'https://tnatco.com/'}),signal:AbortSignal.timeout(10000)});
+    const added=await send(`https://api.kit.com/v4/forms/${env.KIT_FORM_ID}/subscribers`,{method:'POST',headers,body:JSON.stringify({email_address:email,referrer:'https://drinktnat.com/'}),signal:AbortSignal.timeout(10000)});
     if(!added.ok)return reply(added.status===429?429:502,'We couldn’t complete your waitlist signup. Please try again shortly.');
     return reply(200,'Request received. Check your inbox for any confirmation email to finish joining.');
   }catch{return reply(502,'We couldn’t connect to the waitlist. Please try again shortly.');}

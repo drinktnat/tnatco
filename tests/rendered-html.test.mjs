@@ -6,7 +6,7 @@ const env={ASSETS:{fetch:async()=>new Response('Not found',{status:404})}};
 const ctx={waitUntil(){},passThroughOnException(){}};
 test('all product routes render with no legacy sales offers',async()=>{
  for(const path of ['/','/formula','/process','/about','/wholesale','/contact','/privacy']){
-  const response=await worker.fetch(new Request('https://tnatco.com'+path,{headers:{accept:'text/html'}}),env,ctx);
+  const response=await worker.fetch(new Request('https://drinktnat.com'+path,{headers:{accept:'text/html'}}),env,ctx);
   assert.equal(response.status,200,path);const html=await response.text();
   assert.match(html,/TNAT/);assert.doesNotMatch(html,/199\/year hosting|Basic website|Look Professional\. Get Found|stevia|Reb M|Jupiter|RYSE|Isopure|NSF|NCAA approved|FDA approved/i);
   if(path==='/formula'){assert.match(html,/Monk fruit extract/i);assert.match(html,/Contains: milk/i);assert.match(html,/not a final production label/);assert.equal((html.match(/<article data-reveal/g)||[]).length,7);assert.match(html,/Amount \/ bottle/);assert.match(html,/In testing/);}
@@ -16,8 +16,8 @@ test('all product routes render with no legacy sales offers',async()=>{
  }
 });
 test('unconfigured waitlist is unavailable, never reports a saved signup',async()=>{
- const readiness=await worker.fetch(new Request('https://tnatco.com/api/waitlist'),env,ctx);
+ const readiness=await worker.fetch(new Request('https://drinktnat.com/api/waitlist'),env,ctx);
  assert.deepEqual(await readiness.json(),{ready:false});
- const response=await worker.fetch(new Request('https://tnatco.com/api/waitlist',{method:'POST',headers:{Origin:'https://tnatco.com','Content-Type':'application/json'},body:JSON.stringify({email:'test@example.com',consent:true})}),env,ctx);
+ const response=await worker.fetch(new Request('https://drinktnat.com/api/waitlist',{method:'POST',headers:{Origin:'https://drinktnat.com','Content-Type':'application/json'},body:JSON.stringify({email:'test@example.com',consent:true})}),env,ctx);
  assert.equal(response.status,503);assert.match((await response.json()).message,/not been saved/);
 });

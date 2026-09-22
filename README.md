@@ -1,6 +1,6 @@
 # TNAT Chocolate
 
-Pre-launch refrigerated whey isolate shake website for TNAT Co. LLC.
+Pre-launch refrigerated whey isolate shake website for Drink TNAT.
 
 ## Product decisions
 - Monk fruit extract only. Seven proposed ingredients.

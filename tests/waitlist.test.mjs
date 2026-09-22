@@ -6,7 +6,7 @@ const source=await readFile(new URL('../worker/waitlist.ts',import.meta.url),'ut
 const js=ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.ESNext,target:ts.ScriptTarget.ES2022}}).outputText;
 const {handleWaitlist}=await import('data:text/javascript;base64,'+Buffer.from(js).toString('base64'));
 const env={KIT_API_KEY:'test-only',KIT_FORM_ID:'123'};
-function req(body={},origin='https://tnatco.com'){return new Request('https://tnatco.com/api/waitlist',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});}
+function req(body={},origin='https://drinktnat.com'){return new Request('https://drinktnat.com/api/waitlist',{method:'POST',headers:{Origin:origin,'Content-Type':'application/json'},body:JSON.stringify(body)});}
 test('rejects cross-origin, malformed email, missing consent, honeypot and large bodies without contacting Kit',async()=>{
  let calls=0;const send=async()=>{calls++;throw Error('unexpected');};
  assert.equal((await handleWaitlist(req({email:'test@example.com',consent:true},'https://other.example'),env,send)).status,403);

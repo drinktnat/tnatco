@@ -48,7 +48,7 @@ export default function MobileNav() {
       {open && (
         <div className="mobile-menu-panel" id="mobile-navigation-panel">
           <div className="mobile-menu-heading">
-            <span>TNAT CO. / MENU</span>
+            <span>TNAT / MENU</span>
             <strong>Where would you like to go?</strong>
           </div>
           <nav aria-label="Mobile navigation">
