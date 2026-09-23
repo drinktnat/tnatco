@@ -1,11 +1,12 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import {SectionMotion} from './components/ProductMotion';
 export const metadata: Metadata = {
  metadataBase:new URL('https://drinktnat.com'),
- title:{default:'Drink TNAT | Seven ingredients. Nothing else.',template:'%s | Drink TNAT'},
+ title:{default:'TNAT | Seven ingredients. Nothing else.',template:'%s | TNAT'},
  description:'A refrigerated chocolate whey isolate shake in development. Seven ingredients, sweetened with monk fruit. Get TNAT launch updates.',
- openGraph:{siteName:'Drink TNAT',url:'https://drinktnat.com',title:'Drink TNAT — Chocolate',description:'Seven ingredients. Nothing else. A refrigerated whey isolate shake in development.',images:[{url:'https://drinktnat.com/assets/tnat-chocolate-bottle.webp',width:960,height:1200,alt:'TNAT Chocolate packaging concept'}]},
- twitter:{card:'summary_large_image',title:'Drink TNAT — Chocolate',description:'Seven ingredients. Nothing else.',images:['https://drinktnat.com/assets/tnat-chocolate-bottle.webp']},
+ openGraph:{siteName:'TNAT',url:'https://drinktnat.com',title:'TNAT — Chocolate',description:'Seven ingredients. Nothing else. A refrigerated whey isolate shake in development.',images:[{url:'https://drinktnat.com/assets/tnat-chocolate-bottle-refined.png',width:1122,height:1402,alt:'TNAT Chocolate packaging concept'}]},
+ twitter:{card:'summary_large_image',title:'TNAT — Chocolate',description:'Seven ingredients. Nothing else.',images:['https://drinktnat.com/assets/tnat-chocolate-bottle-refined.png']},
  icons:{icon:'/assets/tnat-co-monogram.png'}
 };
-export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>}
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}<SectionMotion/></body></html>}

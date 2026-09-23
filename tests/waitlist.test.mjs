@@ -26,3 +26,25 @@ test('never confirms partial or failed Kit signup',async()=>{
  assert.equal(response.status,502);assert.match((await response.json()).message,/couldn’t complete/);
  const offline=await handleWaitlist(req({email:'test@example.com',consent:true}),env,async()=>{throw Error('network');});assert.equal(offline.status,502);
 });
+
+test('persists signups in SQLite across connections, deduplicates, and only confirms successful writes', async()=>{
+ const {DatabaseSync}=await import('node:sqlite');
+ const {mkdtemp,rm}=await import('node:fs/promises');
+ const {tmpdir}=await import('node:os');
+ const {join}=await import('node:path');
+ const dir=await mkdtemp(join(tmpdir(),'tnat-waitlist-'));const file=join(dir,'signups.sqlite');
+ let db=new DatabaseSync(file);
+ try {
+  db.exec(await readFile(new URL('../drizzle/0000_light_thunderball.sql',import.meta.url),'utf8'));
+  const storage={DB:{prepare(sql){return{bind(...values){return{async run(){return db.prepare(sql).run(...values);}}}}}}};
+  for(const email of [' Athlete@Example.com ','athlete@example.com']){
+   const response=await handleWaitlist(req({email,consent:true,source:'hero'}),storage);
+   assert.equal(response.status,200);assert.equal((await response.json()).message,"You're on the list.");
+  }
+  db.close();db=new DatabaseSync(file);
+  const rows=db.prepare('SELECT * FROM waitlist_signups').all();assert.equal(rows.length,1);assert.equal(rows[0].email,'athlete@example.com');assert.equal(rows[0].consent,1);assert.equal(rows[0].source,'hero');
+  const broken={DB:{prepare(){throw Error('storage unavailable')}}};
+  const failed=await handleWaitlist(req({email:'athlete@example.com',consent:true}),broken);
+  assert.equal(failed.status,503);assert.doesNotMatch((await failed.json()).message,/on the list/);
+ } finally {db.close();await rm(dir,{recursive:true,force:true});}
+});

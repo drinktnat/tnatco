@@ -1,10 +1,16 @@
 export interface KitEnvironment {
+  DB?: { prepare(sql: string): { bind(...values: unknown[]): { run(): Promise<unknown> } } };
   KIT_API_KEY?: string;
   KIT_FORM_ID?: string;
 }
 
 const reply = (status: number, message: string) => Response.json({message}, {status, headers:{'Cache-Control':'no-store'}});
-const configured = (env: KitEnvironment) => Boolean(env.KIT_API_KEY && /^\d+$/.test(env.KIT_FORM_ID ?? ''));
+const configured = (env: KitEnvironment) => Boolean(env.DB || (env.KIT_API_KEY && /^\d+$/.test(env.KIT_FORM_ID ?? '')));
+
+async function saveSignup(env: KitEnvironment, email: string, source: string) {
+  if (!env.DB) throw new Error('Signup storage unavailable');
+  await env.DB.prepare('INSERT INTO waitlist_signups (email, created_at, consent, consent_version, source) VALUES (?, ?, 1, ?, ?) ON CONFLICT(email) DO NOTHING').bind(email.toLowerCase(), new Date().toISOString(), '2026-09-22', source).run();
+}
 const attempts = new Map<string,{count:number;expires:number}>();
 
 export async function handleWaitlist(request: Request, env: KitEnvironment, send: typeof fetch = fetch): Promise<Response> {
@@ -34,6 +40,15 @@ export async function handleWaitlist(request: Request, env: KitEnvironment, send
     const item=attempts.get(ip);if(item&&item.count>=5)return reply(429,'Too many attempts. Please try again in a few minutes.');
     if(!item&&attempts.size>=5000)return reply(429,'Please try again in a few minutes.');
     attempts.set(ip,{count:(item?.count??0)+1,expires:item?.expires??now+600000});}
+  if (env.DB) {
+    try {
+      await saveSignup(env, email, data.source === 'hero' ? 'hero' : 'footer');
+      return reply(200, "You're on the list.");
+    } catch {
+      console.error('waitlist_storage_failed');
+      return reply(503, 'We couldn’t save your email. Please try again or email contact@drinktnat.com.');
+    }
+  }
   const headers={'Content-Type':'application/json','X-Kit-Api-Key':env.KIT_API_KEY!};
   try {
     const created=await send('https://api.kit.com/v4/subscribers',{method:'POST',headers,body:JSON.stringify({email_address:email,state:'inactive'}),signal:AbortSignal.timeout(10000)});
