@@ -9,7 +9,7 @@ const configured = (env: KitEnvironment) => Boolean(env.DB || (env.KIT_API_KEY &
 
 async function saveSignup(env: KitEnvironment, email: string, source: string) {
   if (!env.DB) throw new Error('Signup storage unavailable');
-  await env.DB.prepare('INSERT INTO waitlist_signups (email, created_at, consent, consent_version, source) VALUES (?, ?, 1, ?, ?) ON CONFLICT(email) DO NOTHING').bind(email.toLowerCase(), new Date().toISOString(), '2026-09-22', source).run();
+  await env.DB.prepare('INSERT INTO waitlist_signups (email, created_at, consent, consent_version, source) VALUES (?, ?, 1, ?, ?) ON CONFLICT(email) DO NOTHING').bind(email.toLowerCase(), new Date().toISOString(), '2026-09-27', source).run();
 }
 const attempts = new Map<string,{count:number;expires:number}>();
 
@@ -17,7 +17,7 @@ export async function handleWaitlist(request: Request, env: KitEnvironment, send
   if (request.method === 'GET') return Response.json({ready:configured(env)}, {headers:{'Cache-Control':'no-store'}});
   if (request.method !== 'POST') return new Response(null,{status:405,headers:{Allow:'GET, POST'}});
   const origin=request.headers.get('Origin');
-  if (!origin || origin!==new URL(request.url).origin) return reply(403,'Please use the signup form on the TNAT website.');
+  if (!origin || origin!==new URL(request.url).origin) return reply(403,'Please use the signup form on the beeast website.');
   if (!request.headers.get('Content-Type')?.startsWith('application/json')) return reply(415,'Please submit the email form again.');
   if (!configured(env)) return reply(503,'Waitlist signup is opening soon. Your email has not been saved. Please check back or email contact@drinktnat.com.');
   let data: Record<string,unknown>;

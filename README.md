@@ -1,11 +1,14 @@
-# TNAT Chocolate
+# beeast — Palmetto Honey Protein Milk
 
-Pre-launch refrigerated whey isolate shake website for TNAT.
+Pre-launch website for beeast, based in Stuart, Florida. Public domain and contact inbox remain drinktnat.com and contact@drinktnat.com. TNAT Co. LLC remains the legal operator.
 
-## Product decisions
-- Monk fruit extract only. Seven ingredients in development.
-- Nutrition is calculated, not lab-tested. Process and shelf life are development targets.
-- No checkout, preorder, certification, or health claims.
+## Current product direction
+- Refrigerated 12 fl oz protein milk, with a 30g+ protein target and a full serving of palmetto honey.
+- Filtered water, fat-free ultra-filtered milk, whey protein concentrate, palmetto honey, pure vanilla extract and sea salt. Contains milk. Commercial supplier subingredients are pending.
+- All nutrition values are prototype estimates, pending commercial specifications and finished-product analysis.
+- Pasteurization/extended-shelf-life processing and refrigerated shelf life are under evaluation.
+- No raw-honey or lactose-free product claim. Recipe quantities and processing parameters stay private.
+- Waitlist and team inquiries only; no checkout or preorders.
 
 ## Development
 Use the existing Node 22+ / pnpm dependencies. `pnpm dev`, `pnpm build`, `pnpm test`.
@@ -20,14 +23,10 @@ The earlier Kit path remains as a fallback when no D1 binding exists. It require
 ## Validation
 `node --test tests/rendered-html.test.mjs` after building verifies routes, copy guardrails, storage, duplicate handling, malformed submissions, and failure responses. Runtime declarations are generated with Wrangler; `tsc --noEmit --incremental false` checks types. Responsive navigation and both form flows have also been exercised through the browser against local D1.
 
-## Sources
-- https://developers.kit.com/api-reference/subscribers/create-a-subscriber
-- https://developers.kit.com/api-reference/forms/add-subscriber-to-form-by-email-address
-- https://www.premierprotein.com/products/chocolate-protein-shake
-- https://fairlife.com/core-power/chocolate-protein-shake/
+## Sources and assets
+- UF/IFAS saw palmetto: https://gardeningsolutions.ifas.ufl.edu/plants/trees-and-shrubs/palms-and-cycads/saw-palmetto/
+- UF/IFAS honey: https://ask.ifas.ufl.edu/publication/AA154
+- FAO honey composition: https://www.fao.org/4/w0076e/w0076e04.htm
+- FDA added sugars: https://www.fda.gov/media/127968/download
 
-Competitor labels checked September 22, 2026. Bottle image is an AI-generated packaging concept.
-
-## Founder and positioning
-Trevor Natalie is the founder and owner. Business location: Stuart, Florida. Founder photo and Hofstra game photo are user-supplied. LinkedIn link recovered from the original site.
-Monk fruit dose remains in testing; the previous blended-sweetener dose is not treated as a pure-extract quantity.
+Bottle and logo assets are AI-assisted edits of the founder-supplied beeast reference. Packaging is conceptual. Founder photos are user-supplied. Trevor Natalie is the founder and owner; his Hofstra credentials are retained on the story page.
