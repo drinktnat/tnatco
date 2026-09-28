@@ -1,9 +1,9 @@
-# beeast — Palmetto Honey Protein Milk
+# beeast — Palmetto Honey Protein Shake
 
 Pre-launch website for beeast, based in Stuart, Florida. Public domain and contact inbox remain drinktnat.com and contact@drinktnat.com. TNAT Co. LLC remains the legal operator.
 
 ## Current product direction
-- Refrigerated 12 fl oz protein milk, with a 30g+ protein target and a full serving of palmetto honey.
+- Refrigerated 12 fl oz protein shake, with a 32g protein target and a full serving of palmetto honey.
 - Filtered water, fat-free ultra-filtered milk, whey protein concentrate, palmetto honey, pure vanilla extract and sea salt. Contains milk. Commercial supplier subingredients are pending.
 - All nutrition values are prototype estimates, pending commercial specifications and finished-product analysis.
 - Pasteurization/extended-shelf-life processing and refrigerated shelf life are under evaluation.
