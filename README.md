@@ -30,3 +30,6 @@ The earlier Kit path remains as a fallback when no D1 binding exists. It require
 - FDA added sugars: https://www.fda.gov/media/127968/download
 
 Bottle and logo assets are AI-assisted edits of the founder-supplied beeast reference. Packaging is conceptual. Founder photos are user-supplied. Trevor Natalie is the founder and owner; his Hofstra credentials are retained on the story page.
+
+## Label comparison
+The homepage compares the beeast target formula with U.S. Premier Protein Vanilla (11.5 fl oz) and fairlife Core Power Vanilla 26g (14 fl oz), using official ingredient panels retrieved September 27, 2026. Competitor formulas may change. No ingredient-danger or finished-product superiority claims are made. The beeast column and exclusion lists remain qualified as prototype/target formulation, with final supplier subingredients pending.
